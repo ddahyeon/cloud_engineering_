@@ -89,6 +89,31 @@ jdbc.passwd=6120
 	    <태그></태그> 
 	    ... 
 	    </태그> 
+    라. 컨텐츠가 없는 태그를 빈태그(empty)가 가능 
+	ex. <시작태그></종료태그>
+	    <시작태그 /> 
+
+    HTML(HyperText Markup Language)
+	- 태그명과 속성명등이 정해져 이음
+	- 용도는 웹페이지의 구조를 만들때 사용
+    xml(eXtensible Markup Language:확장가능한 마크업 언어)
+	- 태그명과 속성명등을 마음대로 지정 가능 
+	ex. 
+	<person>
+	  <name>홍길동</name>
+	  <age>20</age>
+	</person>
+
+	- 용도는 서로 다른 플랫폼에서의 데이터 전달용(공동포맷)
+	ex.
+
+	  A(os/언어/툴)		B(os/언어/툴)
+	  win			Linux
+	  java			python
+	  word 			hop
+
+
+
 /////////////////////////
 
 
