@@ -9,4 +9,79 @@ MyBatis 정리
 MyBatis 프레임워크(Framework) 
 
 1. 개요
-  - 
+  - JDBC 사용을 편리하고 효율적으로 기능이 추가된 형태의 SQL Mapping Framework임.
+    ( 개발자가 메서드 호출하면, 이 메서드에 해당하는 sql문을 자동으로 실행해줌 )
+  - ibatis ( 초창기 버전명 )
+
+2. 환경설정
+
+  - mybatis jar 필요
+    http://mybatis.org 에서 다운로드 받음  (mybatis-3.5.17.jar)
+
+  - mysql 드라이버 필요
+
+  위 2개의 jar파일을 (mybatis-3.5.17.jar, mysql-connector-j-8.0.33.jar) eclipse에서 build path해야됨.
+
+
+3. MyBatis 사용방법
+
+  
+
+   1) jdbc에서 사용했던 4가지정보를 외부파일에 저장함.
+
+     String driver = "com.mysql.cj.jdbc.Driver"; // 핵심이 되는 클래스명
+     String url = "jdbc:mysql://localhost:3306/testdb";
+     String userid ="root";
+     String passwd = "1234";
+
+    ==> 파일명.properties  #  key=value
+    ==> 저장방법
+          src
+	    com
+	      config
+	           jdbc.properties
+# 주석문 
+# key=value
+jdbc.driver="com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/testdb
+jdbc.userid=root
+jdbc.passwd=6120
+
+  --> 현재 이클립스에서 사용중인 인코딩은 기본적으노 utf-8임 (전세계의 모든 언어를 표현할 수 있음)
+      생성된 jdbc.properties 파일도 utf-8로 인코딩 변경
+
+  2) DTO 클래스 작성
+    - MyBatis에서 필수
+    - 일반적으로 테이블당 한개씩 작성
+	ex. dept테이블용 DeptDTO.java
+	    emp테이블용 EmpDTO.java
+
+    - DTO클래스의 변수명은 테이블릐 컬럼명과 일치시켜주는 것을 권장 
+	ex. Dept 테이블 -----> com.dto.DeptDTO.java
+	    컬럼 
+	    deptno -----> int deptno; getDeptno()
+				      setDeptno(값) 
+	    dname -----> String danme;
+            Loc -------> String loc;
+		명시적으로 매핑하는 추가작업이 필요
+	    sal -------> int salary; getSalary()
+				     setSalary(값) 
+    
+    - DTO클래스에서 기본생성자와 getter/setter 메서드는 필수임 
+    --> DTO에 저장된 데이터는 자동으로 MyBatis에서 가져와서 SQL문에 사용됨 
+	반대로 SQL문 실행된 결과를 자동으로 DTO에 저장시킨다 
+
+
+  3) 2개의 xml 파일 필요 
+    - *.xml 
+/////////////////////////
+    Xml (eXtensible Markup Language: 확장가능한 마크업 언어) ex. HTML 
+    가. 태그로 구성
+	ex. <태그>
+	     컨텐츠 
+	    </태그>  
+
+
+/////////////////////////
+
+
