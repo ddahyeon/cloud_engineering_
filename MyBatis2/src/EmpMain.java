@@ -63,7 +63,17 @@ public class EmpMain {
 			 session.commit();
 			 
 
-			
+			 //choose
+			  EmpDTO dto4 = new EmpDTO();
+			  //dto4.setJob("CLERK");
+			 List<EmpDTO> list7 = session.selectList("com.config.EmpMapper.selectChoose", dto4 );
+			 System.out.println(list7);
+			 System.out.println(list7.size());
+	
+				//단일 컬럼
+				int cnt = session.selectOne("com.config.EmpMapper.singleColumn");
+				System.out.println("count:" + cnt );
+				
 			
 		session.close();
 	}

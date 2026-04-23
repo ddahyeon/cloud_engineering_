@@ -598,6 +598,20 @@ JDBC                                             MyBatis 프레임워크
 		</select>
 
 
+  5) 단일값 반환
+    - select 했을 떄 컬럼값 하나로 반환하는 경우
+
+	ex. Select count(*)
+	from emp;
+
+
+       		count(*)
+	       ----------
+	       16
+
+
+              int t = session.selectOne("id")
+
 
 
 
