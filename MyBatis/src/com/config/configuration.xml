@@ -7,20 +7,28 @@
   <!-- xml 주석-->
   <!-- jdbc.properties 등록-->
   <properties resource="com/config/jdbc.properties"></properties>
+  
+  <typeAliases>
+  	<typeAlias alias="DeptDTO" type="com.dto.DeptDTO"/>
+  </typeAliases>
 
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
+      
+      <!-- JDBC의  Connection 과 같음 -->
       <dataSource type="POOLED">
         <property name="driver" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.userid}"/>
         <property name="password" value="${jdbc.passwd}"/>
       </dataSource>
+      
     </environment>
   </environments>
   <mappers>
     <!-- mapper 파일 등록-->
     <mapper resource="com/config/DeptMapper.xml"/>
+    <mapper resource="com/config/DeptMapper2.xml"/>
   </mappers>
 </configuration>
