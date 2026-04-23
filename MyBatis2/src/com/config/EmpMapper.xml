@@ -35,6 +35,49 @@
    		 </foreach>
 	    </where>
 	 </select>
+	 
+	   <!-- 조건 하나인 경우-->
+      <select id="selectif"  parameterType="EmpDTO"  resultType="EmpDTO">
+			select empno, ename, sal,job
+			from emp
+			<where>
+			    <if test="job != null">
+				job = #{job}
+			    </if>
+			</where>
+		 </select>
+		 
+	 <!-- 조건 여러개 경우-->
+	<select id="selectif2"  parameterType="EmpDTO"  resultType="EmpDTO">
+		select empno, ename, sal,job
+		from emp
+		<where>
+		  <if test="job != null">
+		  job = #{job}
+		  </if>
+		 <if test="sal != 0">
+		  or sal = #{sal}
+			 </if>
+		</where>
+	 </select>
+	 
+	 <!-- 조건 + update -->
+	  <update id="updateIf" parameterType="EmpDTO">
+	 update emp
+		    <set>
+			    <if test="mgr != 0">
+				 mgr=#{mgr},
+			    </if>
+
+			    <if test="ename != null">
+				ename  = #{ename},
+			    </if>
+			    <if test="sal != 0">
+				 sal = #{sal}
+			    </if>
+		    </set>
+		    where empno=#{empno}
+		</update>		 
     	
      
      

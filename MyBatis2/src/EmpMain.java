@@ -34,7 +34,35 @@ public class EmpMain {
 			List<EmpDTO> list4 = session.selectList("com.config.EmpMapper.selectMulti", list3);
 			System.out.println(list4);
 		
+			//조건 하나인 경우
+			 EmpDTO dto = new EmpDTO();
+//			 dto.setJob("SALESMAN");
 			
+			 List<EmpDTO> list5 = session.selectList("com.config.EmpMapper.selectif", dto );
+			 System.out.println(list5);
+			 System.out.println(list5.size());
+			
+			 
+			//조건 여러개 경우
+			   EmpDTO dto2 = new EmpDTO();
+//				 dto2.setJob("SALESMAN");
+				 dto2.setSal(800);
+				
+		 List<EmpDTO> list6 = session.selectList("com.config.EmpMapper.selectif2", dto2 );
+		 System.out.println(list6);
+		 System.out.println(list6.size());
+		 
+		 // update + 조건
+	     EmpDTO dto3 = new EmpDTO();
+			 dto3.setMgr(7902);
+			 dto3.setEname("이순신");
+			 dto3.setSal(800);
+			 dto3.setEmpno(9003);
+			 int n = session.update("com.config.EmpMapper.updateIf", dto3);
+			 System.out.println(n+"개가 수정됨");
+			 session.commit();
+			 
+
 			
 			
 		session.close();
