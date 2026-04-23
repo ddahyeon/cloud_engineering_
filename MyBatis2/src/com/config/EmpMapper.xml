@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.config.EmpMapper">
+  
+  	<!-- 멀티 insert-->
+    <insert id="insertMulti" parameterType="arraylist">
+        insert into emp ( empno, ename, sal )
+        values
+        <foreach item="dto" separator=","  collection="list">
+           ( #{dto.empno}, #{dto.ename}, #{dto.sal} )
+        </foreach>
+    </insert>
+    
+    
+    <!-- 멀티 delete-->
+     <delete id="deleteMulti" parameterType="arraylist">
+		     delete from emp
+          <where>  
+		        <foreach item="num"  separator="," collection="list" 
+			         open="empno IN (" close=")">
+			    #{num}	
+			</foreach>
+		  </where>
+     </delete>
+     
+     <!-- 멀티 select -->
+     <select id="selectMulti" parameterType="arraylist" resultType="EmpDTO">
+	     select empno, ename, sal
+    	     from emp
+    	     <where>
+		<foreach item="ename" collection="list" separator=","  open="ename IN (" close=")">
+        		#{ename}
+   		 </foreach>
+	    </where>
+	 </select>
+    	
+     
+     
+</mapper>
+

@@ -397,16 +397,15 @@ JDBC                                             MyBatis 프레임워크
 
 
     - java코드: 
-	List<String> list = Arrays.asList('TURNER', 'SMITH', 'JONES');
-	List<EmpDTO> list2 = session.selectList("com.config.EmpMapper.selectMulti", list);
-	
-	Session.commit();
+	List<String> list3 = Arrays.asList("TURNER", "SMITH", "JONES");
+	List<EmpDTO> list4 = session.selectList("com.config.EmpMapper.selectMulti", list3);
+	System.out.println(list4);
 
 
 
     - MyBatis문 
 
-	<select id="selectMulti" parameterType="arraylist">
+	<select id="selectMulti" parameterType="arraylist" resultType=="EmpDTO">
 	     select empno, ename, sal
     	     from emp
     	     <where>
@@ -414,8 +413,9 @@ JDBC                                             MyBatis 프레임워크
         		#{ename}
    		 </foreach>
 	    </where>
-    	
-	    )
+    	 </select>
+
+
 
 
 
