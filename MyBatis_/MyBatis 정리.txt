@@ -614,4 +614,39 @@ JDBC                                             MyBatis 프레임워크
 
 
 
+-------------------------------------------------------------------------
+
+1. 페이징 처리(paging)
+
+  - 반드시 정렬 필요
+    List<E> list  = session.selectList(String Object, new RowBounds(int offset, int limit)); 
+
+
+  Ex. 게시판 (10개 레코드)  
+	
+	총레코드 갯수: 10개			int totalRecord;  <---- DB에서 조회 
+	페이지당 보여줄 갯수: 3개		int perpade=3;
+	전체 페이지갯수: 10/3 = 4		int totalPage = Math.ceil(10/3.0)
+	현재 페이지번호: 			int curPage=1;  <----- 초기값
+
+
+	#구현
+	int curPage=1;
+	int perPage=3;
+	int offset = (curPage-1)*perPage
+	List<EmpDTO> list = session.selectList("", new RowBounds(int offset, perPage));
+
+
+	
+-------------------------------------------------------------------------
+
+2. resultMap
+
+  1) 용도 2가지
+
+    가. 테이블과 컬럼명과 DTO의 변수명이 다른 경우
+
+
+
+    나. 조인할 때 
 

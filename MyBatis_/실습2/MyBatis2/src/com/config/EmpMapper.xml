@@ -79,8 +79,8 @@
 		    where empno=#{empno}
 		</update>		 
 		
-				<!-- choose 실습-->
-<select id="selectChoose" parameterType="EmpDTO" resultType="EmpDTO">
+		<!-- choose 실습-->
+		<select id="selectChoose" parameterType="EmpDTO" resultType="EmpDTO">
 		   select empno, ename, sal,job
 			from emp
 			<where>
@@ -98,11 +98,18 @@
 			</where>
 		</select>		
 		
-		 <!--단일 컬럼-->
-  <select id="singleColumn" resultType="int">
+	 <!--단일 컬럼-->
+  	<select id="singleColumn" resultType="int">
       select count(*)
 	       from emp
-  </select>		
+ 	 </select>	
+ 	 
+ 	 <!--페이징-->
+  	<select id="paging" resultType="EmpDTO">
+      select empno, ename, sal
+	  from emp
+	  order by empno desc
+ 	 </select>		
     	
      
      
