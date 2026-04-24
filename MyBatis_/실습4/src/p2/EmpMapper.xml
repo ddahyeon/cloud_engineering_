@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="p2.EmpMapper">
+   <resultMap id="empdeptjoinMap2" type="DeptDTO">
+      <id property="deptno"  column="deptno"/>
+      <result property="dname"  column="dname"/>
+      <result property="loc"  column="loc"/>
+   	 <!-- List<EmpDTO> empList  -->
+   	 <collection property="empList" ofType="EmpDTO">
+   	    <id property="empno" column="empno"/>
+        <result property="ename" column="ename"/>
+        <result property="job" column="job"/>
+        <result property="mgr" column="mgr"/>
+        <result property="hiredate" column="hiredate"/>
+        <result property="sal" column="sal"/>
+        <result property="comm" column="comm"/>
+        <result property="deptno" column="deptno"/>   
+   	 </collection>
+   </resultMap>
+   <select id="empdeptjoin2" resultMap="empdeptjoinMap2">
+         select *
+         from emp join dept on dept.deptno = emp.deptno
+         order by empno desc
+   </select>
+  	
+</mapper>

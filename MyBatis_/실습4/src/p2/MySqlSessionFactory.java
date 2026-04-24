@@ -1,4 +1,4 @@
-package com.config;
+package p2;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ public class MySqlSessionFactory {
 	static SqlSessionFactory sqlSessionFactory;
 	static{
 		
-		String resource = "p1/configuration.xml";
+		String resource = "p2/configuration.xml";
 		InputStream inputStream=null;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
