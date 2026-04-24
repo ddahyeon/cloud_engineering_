@@ -765,3 +765,8 @@ JDBC                                             MyBatis 프레임워크
                  from emp join dept on emp.deptno = dept.deptno
 		 order by empno desc
            </select> 
+
+-------------------------------------------------------------------------
+
+3. Layer 나누기 
+
