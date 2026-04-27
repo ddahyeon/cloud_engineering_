@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>문제3. 입력태그</title>
+</head>
+<form>
+<body>
+    <h1>Payment Form</h1>
+    <hr>
+    <td>Required fields are followerd by *</td>
+    <h1>Contact Information</h1>
+    Name: * <input type="text" name="username" placeholder="smith"><br><br>
+
+    <fieldset>
+    <legend>Gender *</legend>
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female
+    <input type="radio" name="gender" value="Other" checked>Other<br><br>
+    </fieldset>
+
+    Address: <br>
+    <textarea name="message" rows="10" cols="182" placeholder="Enter the address"></textarea><br><br>
+
+    Email: * <input type="text" email="email" placeholder="smith@gmail.com"><br><br>
+    Pincode: * <input type="text" pincode="pincode" placeholder="123456"><br><br>
+    <hr>
+    <h1>Payment Information</h1>
+     Card Type: * 
+     <select id="card type" name="card">  
+            <option value="--select a Card Type--">--select a Card Type--</option>
+            <option value="Rupay">Rupay</option>
+            <option value="Mastercard">Mastercard</option>
+            <option value="Visa">Visa</option>
+        </select><br><br>
+
+     Card number: * <input type="text" number="number" placeholder="1111-2222-3333-4444"><br><br>
+     Expitarion Date: * <input type="date" name="m_date">달력 <br><br>
+     CVV: * <input type="text" name="cvv"> <br>
+</form>
+</body>
