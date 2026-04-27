@@ -1,0 +1,67 @@
+HTML 정리 
+
+1. Web 아키텍처 (web architecture)
+
+    Server: 클라이언트의 요구사랑을 서비스해주는 역할
+	ex. 웹서버, DB서버, FTP서버, DNS서버 ,,,,
+
+    Client: 서버에게 필요한 작업을 요청하는 역할 
+
+	가. html인 정적 컴포넌트 
+
+	client(클라이언트)-웹브라우저 			server(웹 서버) - Apache, Ngnix, IIS,,,
+				요청(request): 
+				    1) www.google.com/
+				       index.html
+				------------------------>  2) index.html(css, js) 찾음 
+							   3) 없으면 404 오류 (File Not Found)
+							   4) 있으면 index.html 응답
+				<------------------------ 
+				    5) 응답(response):
+					index.html(*.css, *.js,img) 다운로드
+					(없는경우 FileNotFound.html)
+	6) index.html(*.css, *.js,img) 저장(캐시 저장소에 저장됨) 
+	7) index.html 실행후
+	   화면에 랜더링함
+				 8) www.google.com/index.html처럼
+				   이전 요청과 동일하면 캐시 사용
+				------------------------->
+	
+	html: 정적컴포넌트 (static component)
+	      항상 동일한 화면이 렌더링됨 
+	      ex. 현재시간 09:35
+
+
+	나. jsp인 동적 컴포넌트 (java 기술) 
+	     client(클라이언트)-웹브라우저 				server(컨테이너) -tomcat, resin,,,
+				  1) 요청
+				     example.com/hello.jsp.     2) hello.jsp 찾음
+				    -------------------->	3) 없으면 404 발생
+								4) 있으면 3단계가 실행됨 
+								  1단계: 변환단계
+								  hello.jsp--> hello_jsp.java
+
+								  2단계: 컴파일단계
+								  hello_jsp.java--> hello_jsp.class
+
+								  3단계: 실행
+								  hello_jsp.class--> 결과값으로 html을 만듦
+				    <----------------------
+				  5) 응답: html로 응답
+	   6) 랜더링
+	     현재시간이 달라짐 
+
+
+	다. Setvlet인 동적 컴포넌트 (java 기술)
+	      client(클라이언트)-웹브라우저 				server(컨테이너) -tomcat, resin,,,
+
+
+
+
+
+
+
+
+
+
+
