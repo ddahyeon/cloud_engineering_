@@ -25,24 +25,24 @@
         <input type="email" name="m_email">이메일 <br>
 
         <input type="file" name="m_file"><br>
-        <input type="file" name="m_file" accept="image/*"><br>
-        <input type="file" name="m_file" multiple><br>
+        <input type="file" name="m_file" accept="image/*"><br>  <!-- 이미지 확장자 파일만 가능 -->
+        <input type="file" name="m_file" multiple><br>  <!-- 파일 여러개 선택 가능 -->
         <input type="file" name="m_file" multiple="multiple"><br>
 
-        <!-- 사용자에게 태그를 보여주지 않고 임의의 값을 서버에 전달할 때 -->
+        <!-- 사용자에게 태그를 보여주지 않고 임의의 값을 서버에 전달할 때 hidden을 하면 value값이 안보임 -->
         <input type="hidden" name="address" value="seoul"><br>
 
-
-        <input type="number" name="count"><br>
-        <input type="number" name="count" min="0" max="5"><br>
-        <input type="number" name="count" step="5"><br>
+ 
+        <input type="number" name="count"><br>  <!-- 1씩 증가 (- ~ + 모든 범위) -->
+        <input type="number" name="count" min="0" max="5"><br>  <!-- 최소 최대값 조절 가능 -->
+        <input type="number" name="count" step="5"><br> <!-- 5씩 증가 -->
 
 
         <input type="range" name="m_range" min="1" max="10"> <br>
 
         <input type="search" name="m_search"> <br>
 
-        <select id="cars" name="cars">
+        <select id="cars" name="cars">  <!-- 여러개 값 선택하기 -->
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="fiat">Fiat</option>
