@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ 
+ /*
+     ::before
+	 ==> 특정요소 내용(content)부분 바로 앞에 다른 요소 삽입 기능
+
+	 ::after
+	 ==> 특정요소 내용(content)부분 바로 뒤에 다른 요소 삽입 기능
+
+	 ::selection
+	 ==> 특정요소에서 사용자가 선택한 부분을 선택
+
+	 ::placeholder
+	 ==> placeholder 속성가진 요소 선택
+
+ */
+
+ p::before{ 
+	content: url("/images/001.png"); 
+ }
+
+ p::after{ 
+	content:' 장군';
+	color:blue;
+ }
+
+ li::selection {
+    color:aqua;
+ }
+
+ input::placeholder{
+    color:blue;
+ }
+</style>
+</head>
+<body>
+
+<p>강감찬</p>
+<p>이순신</p>
+<ul>
+	<li>A1</li>
+	<li>A2</li>
+	<li>A3</li>
+	<li>A4</li>
+</ul>
+<input type="text" placeholder="first name(선택)">
+<textarea placeholder="last name"></textarea>
+</body>
+</html>

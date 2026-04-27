@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ 
+ /*
+    # 문단 첫줄 선택. 블럭레벨만 사용가능
+	 p::first-line{ color:blue }
+   
+	# 텍스트의 첫 글자 선택.
+     p::first-letter{ color:blue; } 
+ */
+
+ p::first-line{ 
+	color:red;
+	font-size: 25px;
+ }
+ p::first-letter{ 
+	color:blue;
+	font-size: 40px;
+ }
+</style>
+</head>
+<body>
+  <div>
+	<p>
+		AAA1(선택)<br>
+		AAA2<br>
+		AAA3<br>
+	</p>
+	<p>
+		BBB1(선택)<br>
+		BBB2<br>
+		BBB3<br>
+	</p>
+	<p>
+		CCC1(선택)<br>
+		CCC2<br>
+		CCC3<br>
+	</p>  
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Box 모델 실습</title>
+<style type="text/css">
+
+  /*
+   padding 기본개념 ( 안쪽 여백 )
+
+  - 기능: Content 와 border 사이의 여백을 제어하고 
+         그 값들은 % 또는 px로 설정.
+
+  - 문법1:
+     
+        padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+
+  - 문법2: 축약 표현
+
+        padding: top right bottm left;
+      예> padding: 10px 10px 10px 10px;
+
+         padding: top right|left bottm;
+      예> padding: 10px 10px  10px;
+
+         padding: top|bottm right|left ;
+      예> padding: 10px 10px;
+
+         padding: top|bottm|right|left ;
+      예> padding: 10px;
+
+     ==> 개발자 도구에서 축약된 값을 선택하면 
+      해당 프로퍼티가 어떻게 축약되었는지를 볼 수 있다.
+
+
+
+  */
+
+
+  div{
+      width:100px;
+      height: 100px;
+      background-color: red;
+      margin: 20px; 
+      border: 5px solid black;
+  }
+   #one{
+      padding-top:10px;
+      padding-right:10px;
+      padding-bottom:10px;
+      padding-left:10px;
+    }
+    #two{
+      padding:10px 10px 10px 10px;  /* 상 우 하 좌 */
+    }
+    #three{
+      padding:10px 10px 10px;  /* 상: 50px  좌우: 20 px 하:30px */
+    }
+    #four{
+      padding:10px 10px;  /* 상하: 50px  좌우: 20 px*/
+    }
+    #five{
+      padding:10px
+    }
+</style>
+</head>
+<body>
+  <div id="one">hello</div>
+  <div id="two">hello</div>
+  <div id="three">hello</div>
+  <div id="four">hello</div>
+  <div id="five">hello</div>
+</body>
+</html>
+

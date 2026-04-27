@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flex 실습</title>
+<style type="text/css">
+
+ /*
+   - display:inline-flex 로 지정한 경우
+   
+       실행결과는 다음과 같다.
+      가. 명시적으로 지정한 width와 heigt 값을 가짐.
+      나. 명시적으로 height 값을 지정하지 않으면 
+         가장 큰 height 값이 적용됨. 
+      다. 브라우저 화면을 줄여도 display:flex와 다르게 요소들의 크기 변경이 안됨.
+         이유는 크기가 정의된 실제 너비에 의해서 사전 정의되기 때문이다.
+	 즉 inline 특징을 그대로 따름.
+
+  */
+
+
+
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+
+    /*  Flexbox 적용    */
+    display: inline-flex;
+  }
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+</style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="item-1">div</div>
+        <div class="item-2">w=250px</div>
+        <div class="item-3">h=250px</div>
+        <div class="item-4">w/h=300px</div>
+        <div class="item-5">w=350px</div>
+        <div class="item-6">w=350px</div>
+    </div>
+</body>
+</html>
+

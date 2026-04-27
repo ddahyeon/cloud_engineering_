@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pseudo 실습</title>
+<style type="text/css">
+
+  /*  CSS3
+      p:nth-child(n){} : n번째 자식으로 된 모든 p태그 선택  , 1부터 시작
+      p:nth-child(2n){} : 2n번째 자식으로 된 모든 p태그 선택  , 1부터 시작, 2, 4, 6 선택됨
+ */
+  p:nth-child(2){
+     color:red;
+  }
+  p:nth-child(2n){
+    font-size: 20px;
+  }
+</style>
+
+</head>
+<body>
+  <p>1</p>
+  <p>2(선택)</p>
+  <p>3</p>
+  <p>4</p>
+  <p>5</p>
+  <p>6</p>
+  <p>7</p>
+</body>
+</html>
+

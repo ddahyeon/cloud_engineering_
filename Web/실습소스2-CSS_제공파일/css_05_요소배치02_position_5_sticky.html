@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>position static 실습</title>
+<style type="text/css">
+
+  /*
+       position:static
+        - 기본값. 즉 기본적인 document flow(문서대열)을 따른다.
+          즉 임의의 배치가 불가능하기 때문에  top,right,bottom,left 속성에 영향을 안 받음.
+          결국 위치를 변경하려면 반드시 static 이외의 값을 지정해야 된다.
+
+  */
+
+   div.sticky {
+     /* 
+         static 지정: 화면을 축소하고 스크롤하면 요소가 스크롤됨.
+         sticky 지정: 화면을 축소하고 스크롤하면 요소가 스크롤되다가 
+                      top:30px 위치에 가면 요소가 fixed 처럼 고정됨.
+     */
+     position: sticky; 
+     top: 30px; 
+     border: 3px solid #73AD21;
+   }
+</style>
+</head>
+<body>
+   <h2>position: sticky;</h2>
+   <div class="sticky">
+    This div element has position: static;
+ </div>
+   <p>An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+    An element with position: fixed; is positioned relative to
+    the viewport, which means it always stays in the same place 
+    even if the page is scrolled:
+   </p>
+   
+
+
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background-position 실습</title>
+<style type="text/css">
+    div{
+      background-image:url('images/plans-background.jpg');
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: top;
+      background-color: red;
+
+
+    /*
+      7) backgournd-clip
+       - 배경이 테두리(border) 밑으로 확장될 수 있는지 여부 설정.
+         즉 테두리(border)안에 있거나 밖으로 넘어가게 설정 가능. 
+       - 테두리 안쪽이 보이는 점선(dotted) 또는 파선(dashed)에서만 시각적 차이를 확인할 수 있다.
+     
+      예>
+        background-clip: border-box;   // 기본, 배경이 테두리(board)까지 차지함. ( Z축 순서 상 테두리와 겹쳐보임)
+        background-clip: padding-box;  // 배경이 padding 까지 차지함. ( 테두리(border)에 배경을 그리지 않음 )
+	      background-clip: content-box;  // 배경이 content 까지 차지함.  ( padding에 배경을 그리지 않음 )
+      */
+
+
+      background-size: auto;
+
+      padding: 10px;
+      background-clip: border-box;
+    }
+</style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <div style="border: 10px dotted red">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+   </div>
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캐스캐이딩과 명시도(Specificity)</title>
+<style>
+  /*  선택자 결합하기 ( CSS 명시도가 높아진다 )
+
+    - 선택하고자 하는 요소범위를 줄일 수 있음.
+   예> #product-overview  h1{
+
+      }
+
+  - 결합자 적용한 구체적인 규칙일수록 css 명시도가 올라간다. (*************)
+   예>
+      #product-overview  h1{
+	      color: red;  # css 명시도가 높음 ( 우선권이 높음 )
+      }
+
+      h1{
+	      color: blue;
+
+      }
+
+   */
+
+
+
+   #product-overview  h1{
+    /* # css 명시도가 높음 ( 우선권이 높음 ) */
+	      color: red;  
+      }
+
+    h1{
+	      color: blue;
+
+    }
+</style>
+</head>
+<body>
+  <div id="product-overview">
+    <h1>Hello</h1>
+  </div>
+  
+</body> 
+</html>
+

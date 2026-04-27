@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flex 실습</title>
+<style type="text/css">
+
+  /*
+
+   Flex Item 속성
+
+  flex-basis 속성
+
+    - 기능: flex item의 기본 크기 설정 기능.
+           auto값이 기본값으로 지정된 widht 및 height 값으로 
+	   크기가 설정됨.
+
+    - 특징: 지정하면 항상 주죽의 크기 설정과 관련됨. (******************)
+           row 기반이면 width 크기를 설정하는 기능이고
+	   column 기반이면 height 크기를 설정하는 기능이다.
+
+    - 동작방식:
+        row인 경우 ( width 고려)
+          flex-basis:auto, width:350px 이면  width 적용 ( auto이기 때문에 원래 기능이 적용됨 )
+          flex-basis:300px, width:350px 이면  flex-basis 적용 ( width를 덮어씀 )
+
+        column 인 경우 ( height 고려)
+          flex-basis:auto, height: 200px 이면  height 적용 ( auto이기 때문에 원래 기능이 적용됨 )
+	  flex-basis:300px, height: 200px 이면  flex-basis 적용 (height를 덮어씀 )
+
+    - 백분율도 사용 가능
+	   flex-basis: 10% ==> 전체 너비(개발자도구에서 확인)가 만약 2062 라면
+	                       10%를 지정했기 때문에 206.2px이 된다.
+
+    - 최소너비(min-width)와 최대너비(max-width)도 설정하는 경우에는 
+      flex-basis값이 손실되고 너비로 사용되지 않는다.
+
+
+  */
+
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+
+    /*  Flexbox 적용    */
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+
+  }
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+
+    
+
+    /* 1.  column 기반이기 때문에 height 적용
+           auto이기 때문에 height: 300px 적용 */
+    height: 300px;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+
+
+    /* 2. column 기반이기 때문에 height 적용
+          basis값이 있기 때문에 height: 300px 를 재정의 */
+    height: 300px;
+    flex-shrink: 0;
+    flex-basis: 150px;
+}
+</style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="item-1">div</div>
+        <div class="item-2">w=250px</div>
+        <div class="item-3">h=250px</div>
+        <div class="item-4">w/h=300px</div>
+        <div class="item-5">w=350px</div>
+        <div class="item-6">w=350px</div>
+    </div>
+</body>
+</html>
+

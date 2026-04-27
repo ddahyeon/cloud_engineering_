@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text color 실습</title>
+<style type="text/css">
+   /*
+     text 관련 속성
+      1) color
+         - 글자 색상 지정
+      2) text-align
+         - 글자의 수평 정렬 지정
+         - center, left, right, justify(양쪽정렬), end
+      3) text-decoration
+         - 글자의 밑줄 및 취소선
+         - line-through, overline, underline, ..
+         예>  text-decoration:underline;
+               text-decoration:underline dotted;
+         text-decoration:underline dotted red;
+         text-decoration:underline wavy red;   # 물결선(오류선과 비슷)
+            
+      4) text-transform
+         - 글자의 대소문자 지정, 첫글자 대문자 지정
+         - uppercase, lowercase, capitalize, calc()
+      5) text-indent
+         - 첫 라인 들여쓰기
+      6) letter-spacing
+         - 글자 간격 설정
+      7) word-spacing
+         - 단어 간격 설정
+      8) line-height
+         - 라인 간격 설정
+         - font-size값에 비례해서 적용됨.
+            예> font-size: 16px 인 경우
+               line-height:1 로 지정하면 16px 값이 된다.
+               line-height:2 로 지정하면 32px 값이 된다. 
+            line-height:0.8 로 지정하면 12.8px 값이 된다. 
+
+         - font-family에 영향을 받음.
+         - px(고정값) 또는 % 도 가능하지만 권장안함 (예상치 못한 결과 발생가능)
+
+
+
+
+
+   */
+   p{
+      color:red;
+      text-align: right;
+      text-decoration: line-through;
+      text-transform: uppercase;
+    }
+   div {
+      border: 1px solid black;
+      padding: 10px;
+      width: 200px;
+      height: 250px;
+      text-align: justify;
+      text-indent: 50px;
+
+   }
+
+   p.small {
+      line-height: 0.8; /* font-size 값의 비율로 설정됨.  16px이기 때문에 0.8 로 지정하면 12.8이 line-height 값으로 설정*/
+      text-align: center;
+   }
+
+   h1 {
+      letter-spacing: 3px;
+      word-spacing: 10px;
+   }
+   
+   h2 {
+      letter-spacing: -3px;
+      word-spacing: -5px;
+   }
+   #x{
+      font-size: 2rem;
+   }
+</style>
+</head>
+<body>
+   <p>Lorem ipsum2</p>
+   <p id="x">Lorem ipsum1</p>
+   <div>
+      In my younger and more vulnerable years my father 
+      gave me some advice that I've been turning over 
+      in my mind ever since. 'Whenever you feel like criticizing 
+      anyone,' he told me, 'just remember that all the people in 
+      this world haven't had the advantages that you've had.'
+   </div>
+   <p class="small">
+      smaller line-height.<br>
+      smaller line-height.<br>
+   </p>
+   <h1>This is heading 1</h1>
+   <h2>This is heading 2</h2>
+</body>
+</body>
+</html>
+

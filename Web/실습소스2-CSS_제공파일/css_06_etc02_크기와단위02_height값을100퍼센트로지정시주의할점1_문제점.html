@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 크기 단위 실습</title>
+<style type="text/css">
+     
+     /*
+       
+        .backdrop 의 height: 100% 지정했으나  height 적용이 안됨.
+        이유는 backdrop 입장에서는 부모인 body의 height 값을 모르기 때문에 100% 값을 적용할 수 없음.
+
+		해결방법 1
+		- html과 body 태그에 height: 100%; 를 추가한다.
+
+        해결방법2
+		- backdrop의 position 값을 absolute로 지정한다.
+		  조상요소에 position이 없으면 position: absolute는 position: fixed와 동일한 동작을 취한다.
+		  위에 생기는 여백은 여백상쇄(margin collapsing)가 원인이다.
+
+     */
+
+	   body{
+         width: 500px;
+         border: 1px solid red;
+	   }
+
+     .backdrop{
+	     position: relative;  
+	     z-index: 100;
+	     width: 50%;
+	     height: 100%;
+	     background: rgba(0,0,0, 0.5);
+
+	  }
+</style>
+</head>
+<body>
+   <div class="backdrop">hello</div>
+</body>
+</html>
+

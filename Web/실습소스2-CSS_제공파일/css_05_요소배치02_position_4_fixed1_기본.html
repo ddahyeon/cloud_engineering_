@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>position fixed 실습</title>
+<style type="text/css">
+
+  /*
+    position:fixed;   뷰포트 기준의 상대적인 곳에 배치됨.
+                     top,left 등을 지정해서 원하는 곳에 배치가 가능.
+                     document flow(문서대열)에서 해당 요소를 제외되는 방식이기 때문에 아래에 있는 div가 해당 자리를 차지함.
+                     스크롤해도 해당요소는 스크롤 안됨(고정되어 있음 . 따라서 다른 요소와 겹쳐서 보일 수 있음.))
+		                 이 특징을 이용해서 특정 요소를 뷰포트 기준에 항상 고정된 위치에 노출 시킬 수 있음.
+
+
+
+  */
+
+   div.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    border: 3px solid #73AD21;
+}
+</style>
+</head>
+<body>
+  <h2>position: fixed;</h2>
+
+  <p>An element with position: fixed; is positioned relative to
+   the viewport, which means it always stays in the same place 
+   even if the page is scrolled:
+  </p>
+  
+  <div class="fixed">
+    This div element has position: fixed;
+  </div> 
+</body>
+</html>
+

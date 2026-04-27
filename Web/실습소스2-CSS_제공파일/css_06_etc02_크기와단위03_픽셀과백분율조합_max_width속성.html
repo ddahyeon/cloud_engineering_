@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background-position 실습</title>
+<style type="text/css">
+
+  .test__image-container{
+    
+    width:85%; 
+    
+    /* 고정값인 최대값을 지정하면 최대로 커지는 크기를 제한할 수 있음. 
+       따라서 이미지도 정한값보다 커지지 않음. 
+       아무리 브라우저 크기를 크게해도 이미지는 580px 보다 커지지 않음.
+    */
+    max-width: 580px;
+
+  }
+  
+  .test_image{
+    /* % 로 지정했기 때문에 사용하는 기기에 따라 이미지가 커지거나 작아질 수 있음.*/
+     width:100%;
+  }
+</style>
+</head>
+<body>
+ <div class="test__image-container">
+  <img src="images/001.png" class="test_image">
+</div>
+</body>
+</html>
+

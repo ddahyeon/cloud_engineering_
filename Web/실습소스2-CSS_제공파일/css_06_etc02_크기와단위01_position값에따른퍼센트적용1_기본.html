@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 크기 단위 실습</title>
+<style type="text/css">
+     
+     /*
+         # % ( 백분율 )
+	   예> 기본개념
+         <div>
+	       <div> ==> width: %
+	                 height: %
+			 이때 이 높이와 너비는 정확히 어떤 값을 가리키는 것인가?
+			 만약 80%라고 하면 부모요소에 대한 80%인가 아니면 본문요소에 대한 80%인가 html요소에 대한 80%인가?
+			 먼저 containing block에 대한 개념이해가 필요하다.
+                         쉽게 말해서  containing block는 기준점이라고 생각하자.
+      
+           ## 기억해야 할 규칙1: 고정된(fixed)배치와 %
+	     
+	     예>
+               .main-header{
+                   width:100%;
+	                position:fixed;
+                    ..
+	            }
+
+              -> 뷰포트 기준(position:fixed)으로  너비를 100%(width:100%) 설정하겠다는 의미이다.
+	              따라서 화면크기를 변경하면 자동으로 너비도 변경된다.
+
+            ## 기억해야 할 규칙2: 상대적(relative)/정적(static)배치와 %
+
+                 -> position:relative/static 는 조상 컨텐츠(content) 기준이다.
+	                이때 조상은 가장 가까운 블럭레벨요소 이다. 
+		             만약 가까운 조상이 인라인 레벨이면 무시된다.
+
+
+            ## 기억해야 할 규칙3 : 절대적(absolute)배치와 %
+
+                 -> position:absolute 는 조상 컨텐츠의 안쪽 여백(padding) 포함된 기준이다.
+	                 단, 조상요소는 position:relative로 지정되어야 한다.
+
+
+                   예> 메인페이지 이미지
+         
+                      <main>
+	                <section id="product-overview"> # 부모
+                         <h1>Get the freedom you deserve.</h1> #자식
+	                </section>
+
+                  # 부모요소
+                  section#product-overview{
+                     ...
+                     width:100%
+                     height:528px;
+                     padding:10px;
+                     margin-top:43px;
+                     position:relative;
+                     
+                  }
+
+                  # 자식요소
+                  section#product-overview  h1{
+
+                     position: absolute;
+                     bottom:5%;
+                     left:3%;
+                  }
+
+                  => bottom:5% 와 left:3%의 기준(컨테이닝 블럭:containing block)이 
+                     부모인 section#product-overview의 안쪽 여백(padding) 포함된 기준이다.
+
+
+
+
+     */
+      #a{
+         background-color: red;     
+         width: 500px;
+         height: 500px;
+      }
+
+      .main-header1{
+         width:50%;
+	      position:fixed;
+         background-color: blue;          
+	   }
+      
+      .main-header2{
+         width:50%;    /*  가장 가까운 #a 기준이기 때문에 250px. 반드시 부모는 블럭레벨이어야 됨. 인라인이면 무시됨.*/
+	      position:relative;
+         background-color: yellow;          
+	   }
+
+      #b{
+         background-color: mediumspringgreen;     
+         width: 400px;
+         height: 400px;
+         padding: 10px;
+         position: relative;
+      }
+
+      .main-header3{
+         width:50%;   /*  부모의 안쪽 여백이 포함되어 210px이 됨.*/
+	      position:absolute;
+         background-color: magenta;          
+	   }
+</style>
+</head>
+<body>
+  <div id="a">
+    <h1 class="main-header1">Hello1(fixed).뷰포트 기준</h1>
+    <h1 class="main-header2">Hello2(relative). 가장 가까운 블럭레벨의 조상기준.</h1>
+  </div>
+  <hr>
+  <div id="b">
+   <h1 class="main-header3">Hello3(absolute). relative로 지정된 부모기준. padding 포함됨.</h1>
+ </div>
+</body>
+</html>
+

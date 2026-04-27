@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>font-size 실습</title>
+<style type="text/css">
+   
+
+ 
+      /* 
+     rem과 em으로 폰트 크기 조절하기
+	  
+	       가. 기본 개념
+	        - em과 rem은 웹브라우저에 설정된 폰트 크기를 기준으로 산출되는 단위이다.
+	          이 의미는 브라우저 설정에서 기본 폰트 크기를 설정하면 명시적인 px로 지정한 폰트를 제외한
+	          나머지는 모두 브라우저에서 설정된 값의 영향을 받는다는 것이다. ( 기본설정값: 16px )
+            즉 px로 지정한 폰트에는 영향이 없기 때문에 장점일 수도 있으나 일반적으로 웹 브라우저 사용자가
+	          설정을 변경했을 때 글자 크기가 같이 변경되도록 하는 것이 더 나을 수 있다.
+	          따라서 폰트 크기 설정은 px 사용을 권장하지 않는다.
+
+          나. em 동작 
+	           - 부모요소의 em 값을 상속해서 폰트 크기를 정함.
+	             따라서 계층적인 구조에서 의도하지 않게 폰트크기가 커질수 있다.
+              예>  
+                    <div class="testimonial"> # font-size:1.2em
+              <div class="testimonial__subtitle"> # font-size:1.1em
+
+                      우리가 예상한 값은 16*1.1 = 17.6px
+                    실제값은  1.2*16*1.1 = 21.12px
+
+
+        다. rem 동작 ( root em, 권장함 )
+            - 부모요소의 em 값을 상속 안하고 
+              항상 웹사이트의 루트요소 즉 html 요소를 고려하여 루트요소의 폰트크기를 정의하는 
+              브라우저 설정값을 따른다. ( ************ )
+
+                        우리가 예상한 값은 1.6*1.1 = 17.6px
+                        실제값은        1.6*1.1 = 17.6px
+
+                  - 요소의 계층구조를 더 이상 신경쓰지 않아도 됨. 권장됨.
+            - 기본적으로 폰트크기 설정시 사용하나 margin 설정시에도 사용할 수 있다.
+
+        라. 추가적인 프라퍼티인 margin에서 rem 사용
+            - 폰트크기뿐만 아니라 다른 프로퍼티에서도 rem을 사용할 수 있다.
+            - rem은 폰트크기에 적용하든 margin에 적용하든 항상 폰트 크기를 참조하므로 rem의 계산 기준은 
+              html 요소의 초기 폰트 크기이다. ( ************ )
+          
+              예>
+                .testimonial{
+                  font-size: 1.2rem;
+                  margin: 48px 0;  # margin: 3rem 0 과 동일, 1rem=16px
+                                    px보다 rem이 더 동적으로 보이게 한다. 
+                                    (브라우저 설정에서 기본 폰트크기 변경시)    
+      */
+    html{
+      font-size: 10px
+    }   
+    #a li{  
+      font-size: 1.5em;  /*  부모 요소 기준 */
+    }
+    #b li{
+      font-size: 1.5rem;  /*  root인 html 요소 기준 */
+    }
+    
+</style>
+</head>
+<body>
+  <p>Hello(10px)</p>
+   <ul id="a">
+     <li>AAAA(10*1.5=15px)</li>
+     <li>AAAA2</li>
+     <li>
+       <ul>
+         <li>BBBB(15*1.5=22.5px)</li>
+         <li>BBBB2</li>
+       </ul>
+     </li>
+   </ul>
+
+   <ul id="b">
+    <li>AAAA(10*1.5=15px)</li>
+    <li>AAAA2</li>
+    <li>
+      <ul>
+        <li>BBBB(10*1.5=15px)</li>
+        <li>BBBB2</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>
+

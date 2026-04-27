@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>font-family 실습</title>
+<style type="text/css">
+ 
+    /*
+
+     font-family 속성
+      - 글꼴인 폰트를 지정하는 속성으로 여러 개 지정 가능.
+
+      - CSS 에서는 다음 2가지의 기본 font family 이름을 사용한다.
+            
+      a. generic family
+        - 웹 브라우저에서 기본으로 제공하며 폰트가 가진 특별한 핵심적인 특성을 가짐.
+        - serif, sans-serif, monospace, cursive(필기체)
+
+      b. font family
+        - generic family에 속하는 폰트들의 서브 폰트이다.
+          즉 generic family안에 속한 폰트들임.
+              - 예>
+          serif의 대표 서브폰트:  Times New Roman, Georgia
+                sans-serif의 대표 서브폰트:  Helvetica,  Verdana
+                cursive 의 대표 서브폰트:  Brush Script, Mistral
+                monospace 의 대표 서브폰트: Courier New, Lucida Bright
+
+          ==> 정리하면
+              특정 핵심 속성을 지정하는 generic family가 있고 
+              그 안에 일반적 속성은 공유하지만 생김새는 다른 여러 다양한 font family가 존재한다고 보면 된다. 
+    #############################################
+    웹 브라우저에서 폰트 확인하기
+
+     - 크롬브라우저에서는 설정 > 모양 > 글꼴 맞춤설정 에서 확인가능
+       표준 글꼴 항목: font family 이고 기본 글꼴임.
+       Serif, Sans-serif 항목: generic family 임
+    #############################################
+    웹브라우저가 폰트를 결정하는 방법 ( ***************** )
+     
+      가. CSS에서 명시적으로 font-family 속성을 지정하지 않으면
+          웹 브라우저의 표준글꼴에 설정된 font family를 사용하여 랜더링된다.
+    예> 
+      표준 글꼴 : Malgun Gothic
+
+      나. CSS에서 다음과 같이 serif 또는 sans-serif 설정하면
+          웹 브라우저 설정에서 지정한 font family를 사용하여 랜더링된다.
+    예>
+      CSS:  font-family: sans-serif;
+      
+      웹브라우저 설정:
+            sans-serif : Malgun Gothic
+
+        따라서 실제 웹 브라우저 폰트는 Malgun Gothic으로 랜더링된다.
+
+      ===> 가) 와 나)는 웹 브라우저 설정에 영향을 받음.
+
+
+        다. CSS에서 직접 font family를 설정해서 랜더링.
+          이 방법은 웹 브라우저 설정에 직접적인 영향을 받지 않음.
+    
+      예>  
+          CSS 설정:  font-family: '굵은안상수체' , sans-serif;
+    
+          웹 브라우저 설정: 이 설정에 직접적인 영향없음.
+
+      단점은 웹 브라우저에서 기본으로 제공하는 폰트가 아닐 수 있음.
+      해결방법 3가지
+      a. 사용자 로컬 폰트 사용 ( 폰트 제어 불가 )
+      b. 웹폰트(web fonts)=> Google Fonts, 권장
+      c. 특정 서버
+    #############################################################
+     웹 브라우저에서 사용중인 폰트 확인하는 방법
+        - 웹 브라우저 설정에서 직접 확인
+	      - 개발자 도구에서 Computed 탭 선택하면 font-family 확인 가능.
+          CSS에서 font-family 설정코드가 없으면 브라우저에 설정한 기본폰트가 폰트패밀리로 적용된다.
+
+    #############################################################
+     font-family 사용 방법 (*************)
+
+       문법: 구체적인 폰트 패밀리(여러개 지정 가능)부터 지정하고 나중에 제네릭 패밀리를 지정한다.
+          
+	    font-family: "구체적폰트패밀리명", ... ,  제네릭패밀리명;
+
+	    예> font-family: "굵은안상수체","MD솔체" , sans-serif;
+
+	       "굵은안상수체": 이 값이 우리가 사용할 font family 값이다.
+	                   "" 옵션이지만 폰트값에 공백이 있으면 필수로 지정해야 된다.
+
+	       sans-serif: generic family 값이다. 앞의 구체적인 font family값을 찾지 못하면 
+	                   웹 브라우저 설정의 sans-serif 항목에 지정된 폰트 패밀리가 최종적으로 적용된다. 
+
+    */
+
+     .font-arial{
+       font-family: sans-serif;
+     }
+     .font-roman{
+       font-family:  serif;
+     }
+     .font-ansang{
+       font-family: '굵은안상수체' , sans-serif;
+     }
+     .font-md{
+       font-family: 'MD솔체' , sans-serif;
+     }
+</style>
+</head>
+<body>
+   <!-- 가. CSS에서 명시적으로 font-family 속성을 지정하지 않으면
+          웹 브라우저의 표준글꼴에 설정된 font family를 사용하여 랜더링된다. -->
+   <h1>Lorem ipsum</h1> 
+
+   <!-- 나. 웹 브라우저 설정에서 지정한 sans-serif의 font family를 사용하여 랜더링된다.-->
+   <h1 class="font-arial">Lorem ipsum</h1>
+
+   <!-- 나. 웹 브라우저 설정에서 지정한 serif의 font family를 사용하여 랜더링된다.-->
+   <h1 class="font-roman">Lorem ipsum</h1>
+
+   <!-- 다. CSS에서 직접 font family를 설정해서 랜더링.
+          이 방법은 웹 브라우저 설정에 직접적인 영향을 받지 않음.-->
+   <h1 class="font-ansang">Lorem ipsum</h1>
+   <h1 class="font-md">Lorem ipsum</h1>
+   
+</body>
+</html>
+

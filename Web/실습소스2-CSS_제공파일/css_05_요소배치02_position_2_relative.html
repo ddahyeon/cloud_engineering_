@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>position relative 실습</title>
+<style type="text/css">
+/* 
+  position:relative; 
+  
+     -기본 배치 되는 document flow 위치의 상대적인 위치로 배치됨.
+     -document flow(문서대열)에서 해당 요소를 제외 안함. ( relative 자체가 배치 컨텍스트이자 요소 자체이다. )
+	  -top,left 등을 지정해서 원하는 곳에 배치가 가능.
+	  -부모요소내에 사용될 경우 일반적이지 않으나 부모요소를 벗어나는 위치도 가능
+		(overflow:hidden 으로 설정하여 부모요소를 벗어나면 hidden 으로 해결)
+		하지만 부모요소 범위안에서 특정위치에 배치되는 것이 일반적이다.
+
+
+*/ 
+   div.static {
+     position: static;
+     top:30px;  
+     left:50px;
+     border: 3px solid #73AD21;
+   }
+   div.relative {
+     position: relative;
+     top:30px;  
+     left:50px;
+     border: 3px solid #73AD21;
+   }
+</style>
+</head>
+<body>
+  <h2>position: relative;</h2>
+
+  <p>An element with position: static; is not positioned 
+     in any special way; it is 
+    always positioned according to the normal flow of the page:
+   </p>
+   <div class="static">
+      This div element has position: static;
+   </div>
+   <div class="relative">
+      This div element has position: static;
+   </div>
+
+</body>
+</html>
+

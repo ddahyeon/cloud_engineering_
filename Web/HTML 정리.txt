@@ -52,8 +52,135 @@ HTML 정리
 	     현재시간이 달라짐 
 
 
-	다. Setvlet인 동적 컴포넌트 (java 기술)
-	      client(클라이언트)-웹브라우저 				server(컨테이너) -tomcat, resin,,,
+    	다. Servlet(*.java)인 동적 컴포넌트 ( 자바기술 )
+
+      
+           client(클라이어언트)-웹브라우저                     server(컨테이너) - Tomcat, resin,...
+                                 1)요청
+				  example.com/서블릿                  2)서블릿 찾기
+		                  --------------------------->      3) 없으면 404 (File Not Found)
+				                                    4) 있으면
+
+								       컴파일하고 실행(*)
+								       실행후 결과값으로 html을 만듬
+
+				<------------------------------
+				  5)응답: html형식으로 응답
+
+	  6)html 랜더링
+	     현재시간이 달라짐
+
+
+2. 요청 URL 
+
+  표현:   http://서버ip:포트번호/자원
+
+      ex.  http://localhost:8080/index.html
+           http://localhost:8080/hello.jsp
+	   http://localhost:8080/서블릿
+
+
+    ip: 실제 서버의 주소
+    port: 서버안에 여러 네트워크 장치들중에서
+          식별용
+
+      * 주요 장치 port
+        mysql: 3306
+	oracle: 1521
+	tomcat: 8080
+	web(http): 80(기본) <== 요청~응답시 전달및응답 데이터가 노출됨
+	보안web(https): 443 <== 요청~응답시 전달및응답 데이터가 암호화됨.
+	ssh: 22            <== 리눅스 원격 접속 ( 로컬에 linux, AWS )
+	
+----------------------------------------------------
+3. 환경설정
+
+ 1) node.js 설치
+  
+     http://nodejs.org
+
+ 2) VSC 설치 + 플러그인(확장팩) 설치
+     
+      https://code.visualstudio.com/
+
+
+
+4. 웹(web) 표준
+
+   1)개념
+   과거에는 웹 브라우저가 모두 다르기 때문에 서로 다른 html/css/js 사용했음.
+   효율적으로 사용하기 위해서 웹표준을 만듬.
+
+
+
+   2)웹표준 
+    - 1991년에 world wide web 용어가 처음 나옴
+    - 1993년 웹표준 단체 창성 ( w3c )
+
+        http://www.w3c.org
+	https://www.w3.org/standards/
+
+     - html 표준: html5
+       css 표준:  css3
+       js 표준:   ECMAScript5
+
+        ==> w3c가 제안하는 표준기술은 spec임. ( 자바의 인터페이스 개념 )
+	    실제 동작하는 구현은 웹브라우저 벤더가 만듬. (크롬,엣지, brave 등 )
+
+	    따라서 사용중인 브라우저가 표준기술을 실제로 지원하는지 여부를 반드시 확인해야 됨. (***********)
+
+   3) 모질라(mozilla)사이트
+      - https://developer.mozilla.org
+      - w3c에거 제안한 표준기술을 가장 빠르게 준수해서 가이드로 제공함.
+
+ 5. html/css/js
+
+    1)html
+       - 데이터 구조(뼈대) 담당
+
+    2)css
+        - 스타일(디자인) 담당
+ 
+    3)js
+        - 동적처리 담당
+
+
+6.  html 
+
+  1) 개념
+    
+     -HyperText Markup Language
+      
+      HyperText: 링크로 되어있고 선택시 새로운 화면으로 연결.
+      Markup Language: 태그로 구성되어 있고 특정 의미가 포함됨
+
+  2) 특징
+    
+     - 태그로 구성. ex. <태그>
+     - 태그는 시작태그와 종료태그로 구성 ex. <시작태그>몸체(내용)</종료태그>
+     - 태그는 중첩이 가능.
+        ex.  <tag>
+                <tag></tag>
+	     </tag>
+
+     - 종료태그가 없는 태그로 존재함.  ex. <br>, <img> , <input>, <hr>
+     - 몸체가 없는 태그가 존재함 ( 빈(empty)태그라로 부름)
+        ex. <tag></tag> =====> <tag />
+
+     - tag는 소문자 권장 
+     - 시작태그는 속성을 가질 수 있음
+        ex.  <tag 속성명="속성값"  속성명="속성값" > 
+
+       모든 태그에서 사용 가능한 global 속성(ex. id,class,name,style  )도 있고
+       특정 태그에서만 사용 가능한 local속성(ex. href,value )도 있음.
+
+     - 태그명과 속성명이 정해져 있음. 
+       
+     - 속성명을 임의로 지정 가능 (*********************)
+
+         문법:  data-속성명="값"
+
+	 ex. <p id="" data-xxx="" >
 
 
 

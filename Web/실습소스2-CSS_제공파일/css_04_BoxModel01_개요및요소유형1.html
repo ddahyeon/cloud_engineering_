@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Box 모델 실습</title>
+<style type="text/css">
+
+  /*
+    Box 모델 개요
+ 
+  -개념: CSS상에서 요소(tag)는 모두 box로 인식됨.
+  -구성요소 4가지
+   1)content 
+     - 텍스트 및 이미지등 실제 내용이 보여지는 곳
+   2)padding
+     - content를 둘러싸고 있는 영역으로서 투명하다.(안쪽 여백)
+   3)border
+     - padding과 content를 둘러싸고 있는 영역
+   4)margin
+     - 다른 요소 간의 여백을 의미하는 영역으로서 투명하다.(바깥쪽 여백)
+
+  ==>  크롬 개발자 도구에서 하단의 css box를 살펴볼 수 있다.
+
+ 
+2. 요소 유형
+ 
+  1) 블럭 레벨 ( block level )
+    - 전체 너비를 사용하기 때문에 new line를 생성해서 보여짐.
+    - 명시적인 width와 height 지정시 적용됨.
+
+  2) 인라인 레벨 ( inline level )
+    - 필요한 만큼만 너비를 사용하기 때문에 new line없이 보여짐.
+    - 명시적인 width와 height 지정은 적용이 안됨. ( ***** )
+
+
+  */ 
+
+   div{
+      border: 1px solid rebeccapurple;
+   }
+ 
+   span{
+      border: 1px solid rebeccapurple;
+   }
+</style>
+</head>
+<body>
+   <h1>1. 블럭 레벨</h1>
+  <div>a</div>
+  <div>b</div>
+  <div>c</div>
+  <h1>2. 인라인 레벨</h1>
+  <span>a</span>
+  <span>b</span>
+  <span>c</span>
+</body>
+</html>
+

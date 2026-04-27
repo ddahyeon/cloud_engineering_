@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flex 실습</title>
+<style type="text/css">
+
+  /*
+
+   Flex Item 속성
+
+   flex 속성
+    
+    - 축약형
+    - 문법:  
+      flex: grow shrink basis
+
+	예> flex: 0 0 200px; 
+
+
+  */
+
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+
+    /*  Flexbox 적용    */
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+
+  }
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+
+    /* 1.  
+ 
+       row 기반이기 때문에 width 고려.
+
+        grow: 1    기본이 0 이기 때문에 나머지 영역모두 차지
+        shirnk: 0  기본이 1 이고 0은 축소 안됨.
+        basie: 200px    width: 350px 값을 재정의함.
+    */
+  
+    flex: 1 0  200px;
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+</style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="item-1">div</div>
+        <div class="item-2">w=250px</div>
+        <div class="item-3">h=250px</div>
+        <div class="item-4">w/h=300px</div>
+        <div class="item-5">w=350px</div>
+        <div class="item-6">w=350px</div>
+    </div>
+</body>
+</html>
+

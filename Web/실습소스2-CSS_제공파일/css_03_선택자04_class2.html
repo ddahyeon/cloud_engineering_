@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 선택자 실습</title>
+<style type="text/css">
+
+ /* 다음 3가지 경우가 모두 다른 의미이다. */
+
+ .select  .aaa {  /* class 가 select 자손인  aaa 인경우 */
+	color: red;
+ }
+ .select.aaa {   /* class 가 select이면서 aaa 인경우 */
+	background-color: yellow
+ }
+ .select , .aaa { /* class 가 select 또는  aaa 인경우 */
+	font-size: 30px
+ }
+</style>
+</head>
+<body>
+ <ul>
+ 	<li class="select aaa">홍길동</li>
+ 	<li>이순신</li>
+ 	<li class="select bbb">유관순</li>
+ 	<li>강감찬</li>
+ 	<li class="aaa">강감찬</li>
+ 	<li>
+ 	   <ul class="select">
+ 	     <li>AAA</li>
+ 	     <li class="aaa">BBB</li>
+ 	     <li>CCC</li>
+ 	   </ul>
+ 	</li>
+ </ul>	
+</body>
+</html>
+

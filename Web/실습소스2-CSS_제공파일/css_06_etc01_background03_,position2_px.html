@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background-position 실습</title>
+<style type="text/css">
+
+    /*
+      1) background-image
+     - 하나 이상의 배경 이미지 설정
+     - 맨 처음 지정한 이미지가 제일 위에 위치함.
+       만약 background-color 와 같이 사용하면 
+       color보다 image가 위에 위치함.
+      예> background-image: url("x.png"),url("x2.png") ;
+     - image가 기본적으로 repeat 됨.
+
+      2) background-color
+        - 하나의 배경색 설정
+      예> background-color: red;
+
+      3) background-repeat
+     - 배경 이미지의 반복 여부 설정 
+     - repeat-x, repeat-y, repeat, no-repeat, space, round
+      예> background-repeat: repeat-x;
+
+       4) background-size
+     - 배경 이미지 크기 설정
+     - background-size:auto;  width가 자동으로 설정됨.
+     - background-size:300px 100px;   # width: 300px , height: 100px
+       height 값을 지정하지 않으면 width에 맞춰 자동으로 비율을 유지한다.
+     - background-size:100% 같이 비율도 가능.
+       화면 전체를 차지할 목적이지만 컨테이너와 이미지가 일치하지 않음. 컨테이너는 앱에서 다른 비율을 갖기 때문이다.
+       해결방법은 cover 값을 사용한다.
+     - background-size:contain
+        이미지를 자르거나 늘리지 않고 컨테이너내에서 이미지 크기를 최대한
+	      크게 조정한다. 언제나 이미지 전체를 볼 수 있다.
+         컨테이너가 이미지보다 크면 no-repeat 지정하지 않으면
+	      이미지 타일링이 발생된다. no-repeat 를 지정하면 여백이 생긴다.
+     - background-size:cover
+        이미지의 비율을 유지하면서 컨테이너를 채울 수 있는 가장 작은 크기로
+	      빈 공간을 남기지 않고 크기를 조정한다.
+ 	      즉 cover는 언제나 이미지가 컨테이너를 채우게 설정하지만
+	      배경의 비율이 요소와 다른 경우 이미지가 세로 또는 가로로 잘린다.
+
+    ==> 결론은 이미지는 직접 크기값을 설정하지 말고 cover 또는 contain으로 지정한다.
+        ( 컨테이너내의 이미지 배치를 조정하기 위함)  
+
+        5) background-position
+     - 배경 이미지의 초기 위치 설정
+     - top,left,center,right,bottom, px, %
+ 
+      가. top,left,center,right,bottom 지정시
+          background-position: center|top|bottom|left|right;  // 실습시 size 는 auto로 지정할 것.
+          background-position: left bottom;  x축  y축
+ 
+
+      나. px 지정시
+          background-position: 20px;         # x 축
+          background-position: 20px 50px;    # x축 , y축
+
+      다. % 지정시 
+       - 정확한 % 동작은 이미지가 컨테이너에 포함되지 않고 초과되는 부분이 얼마나 되는지를 정의한다. 
+         (이 개념은 전체(100%)영역에서 몇 % 정도에 위치할 지를 결정하는 개념과 동일하다.)
+         
+         background-position: 10%; # x 축으로 10% 정도가 초과됨을 의미한다. ( 이 개념은 x축으로 10% 정도에 이미지가 위치되는 것과 동일하다. )
+         background-position: 0% 10%; # y축으로 10% 정도가 초과됨을 의미한다. 
+         background-position: 50% 50%; # center 
+
+    */ 
+
+    /* 
+       실행결과 확인사항 
+      1. image가 반복 안됨.
+      2. contain 지정하면 화면크기에 맞춰서 언제나 이미지 전체를 볼 수 있다.
+                 no-repeat로 지정했기 때문에 오른쪽에 여백이 생긴다.
+
+         cover 지정하면 화면크기가 커질 때 이미지가 잘려 보인다.
+    */
+    div{
+      background-image:url('images/001.png');
+      background-color: red;
+      background-repeat: no-repeat; 
+
+      background-size: auto;
+      /* 
+         position 실습시 size는 auto로 지정하고 실습하자  
+          -  background-position: 20px;   : x 축 컨테이너의 왼쪽 가장자리를 기준으로 이미지의 왼쪽 가장자리가 어디에 위치할지 정함.
+          - background-position: 20px 50px;  # x축 , y축
+      */
+      background-position: 20px 50px;
+    }
+</style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+   </div>
+</body>
+</html>
+

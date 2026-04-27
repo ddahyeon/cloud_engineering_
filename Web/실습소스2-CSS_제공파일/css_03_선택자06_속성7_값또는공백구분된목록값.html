@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자 실습</title>
+<style type="text/css">
+    /*
+      속성명 ~="값"
+      
+      - 값이 정확히 value이거나 (공백으로 구분된) 값 목록에 value가 포함.
+  */
+
+  div[class ~='en']{
+    color:red;
+  }
+</style>
+</head>
+<body>
+    <div id="one">man-news</div>
+    <div class="en" >milk man(선택)</div>
+    <div class="kr en">letterman2(선택)</div>
+    <div class="kr">newmilk</div>
+    <div id="two" class="en-UK">superman</div>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자 실습</title>
+<style type="text/css">
+  /*
+      속성명 |="값"
+      
+      - 값이 정확히 value이거나 바로 뒤에 하이픈이 오는 value로 시작
+  */
+  div[class |='en']{
+    color:red;
+  }
+</style>
+</head>
+<body>
+    <div id="one">id="one"</div>
+    <div class="en" >class="en"(선택)</div>
+    <div class="kr en">class="kr en"</div>
+    <div class="kr"> class="kr"</div>
+    <div id="two" class="en-UK">class="en-UK"(선택)</div>
+</body>
+</html>
+

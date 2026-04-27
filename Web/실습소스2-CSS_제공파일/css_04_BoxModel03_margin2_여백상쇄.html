@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>margin:auto 실습</title>
+<style type="text/css">
+
+  /*
+  margin 여백 상쇄
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+  
+   1) 개념:
+     margin은 단순하게 너비나 높이에 더하여 계산될 것 같으나 실제로는 그렇지 않음.
+     이유는 인접한 같은 레벨의 블록요소에 상/하 여백이 겹쳐지면 여백이 하나로 합쳐
+     지고 인접한 여백 중에서 큰 크기의 여백으로 적용된다.
+     의도적인 설계로서 두 요소간 거리가 너무 멀어지지 않게 유지할 수 있다.
+     필요시 margin-top 또는 margin-bottom 이용하여 상쇄 방지 가능. 
+   2) 주의
+      만약 display 값이 flex/grid 또는 
+          position 값이 absolute/float 일때는 적용되지 않는다.
+
+  */
+
+   div#a {
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    margin: 20px 0px;
+   }
+   div#b {
+    width: 300px;
+    height:100px;
+    background-color: powderblue;
+    margin: 30px 0px;
+   }
+
+  
+</style>
+</head>
+<body>
+  <h2>여백 상쇄</h2>
+  <div id="a">a</div>
+  <div id="b">b</div>
+
+</body>
+</html>
+

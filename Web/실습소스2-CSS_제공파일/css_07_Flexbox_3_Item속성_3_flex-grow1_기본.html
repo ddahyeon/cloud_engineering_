@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flex 실습</title>
+<style type="text/css">
+
+  /*
+
+   Flex Item 속성
+
+  flex-grow 속성
+ 
+   -기능: 너비를 크게할 때(grow) 요소가 동작하는 방식을 정의한다. 
+         기본값은 0 으로 모든 요소들이 동일한 비율로 커지게 된다.
+
+
+   가. 기본동작
+      - item5(A)와 item6(B)은 크기를 줄이면 A와 B 모두 동일한 크기(약 180px)까지 줄어든다.
+        반대로 크기를 키우면 최대 너비인 350px 까지 커진다. 
+	즉 같은 비율로 커지거나 줄어든다.
+
+   나. 설정동작
+      - item5(A)에 1 지정. ( 나머지는 모두 0 임 )
+      - 크기를 키우면 B는 최대 너비인 350px 이상으로 커지지 않는다.
+        하지만 grow 값이 1 인 A는 최대 너비인 350px를 넘어서 계속 커진다.
+	이유는 grow값이 0인 요소들이 모두 너비를 차지하고 남은 너비를 grow: 1인 A가 차지하게 되어 
+	최대 너비인 350px 보다 더 커질 수 있게 된다.
+
+      - 만약 A:1 B:4 로 지정하고 화면을 키우면 B가 A보다 더 빠르게 커진다.
+        이유는 grow값이 0인 요소들이 모두 너비를 차지하고 남은 너비를 5등분하고(A와 B를 합친값)
+	A가 1/5, B가 4/5 가 차지하게 된다. ( ************** )
+
+  
+      - 추가로 정리할 것은 wrap으로 지정하고 크기를 줄이면 B가 다음 라인으로 넘어가고
+        이때 B는 다음 라인의 너비를 모두 차지하게 된다.
+	이유는 B 하나만 있기 때문에 나머지 너비를 모두 독차지하게 되는 것이다.
+
+
+  */
+
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+
+    /*  Flexbox 적용    */
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+
+  }
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+
+
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+</style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="item-1">div</div>
+        <div class="item-2">w=250px</div>
+        <div class="item-3">h=250px</div>
+        <div class="item-4">w/h=300px</div>
+        <div class="item-5">w=350px</div>
+        <div class="item-6">w=350px</div>
+    </div>
+</body>
+</html>
+

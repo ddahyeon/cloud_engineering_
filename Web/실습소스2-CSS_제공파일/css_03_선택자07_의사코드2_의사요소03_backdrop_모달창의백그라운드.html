@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>안녕하세요</title>
+
+
+    <style>
+       button {
+        font-size: 1.2rem;
+        padding: 5px 15px;
+        }
+
+        dialog::backdrop {
+          background-color: salmon;
+        }
+    </style>
+
+    <script>
+
+        function show(){
+            document.querySelector("#favDialog").showModal();
+        }
+    </script>
+
+</head>
+<body>
+   <!-- https://developer.mozilla.org/ko/docs/Web/HTML/Element/dialog  참조하면 샘플예제 확인 가능-->
+   <dialog id="favDialog">
+    <form method="dialog">
+      <p>
+        <label
+          >좋아하는 동물:
+          <select>
+            <option></option>
+            <option>아르테미아</option>
+            <option>레서판다</option>
+            <option>거미원숭이</option>
+          </select>
+        </label>
+      </p>
+      <menu>
+        <button value="cancel">취소</button>
+        <button id="confirmBtn" value="default">확인</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <menu>
+    <button id="updateDetails" onclick="show()">상세정보 업데이트</button>
+  </menu>
+
+</body>
+</html>

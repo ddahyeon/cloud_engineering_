@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display 실습</title>
+<style type="text/css">
+
+  /*
+    display 속성
+
+  1)개념 및 용도
+    - 요소의 영역 표현 방식을 지정하는 속성이다.
+    - 블럭 레벨를 인라인 레벨로 변경하거나 반대로
+      인라인 레벨을 블럭 레벨로 변경 또는
+      인라인 레벨인데 블럭 레벨처럼 width/height 설정이 가능하고자 할때.
+
+  2)종류
+    display:block;  블럭  레벨로 표현
+    display:inline; 인라인 레벨로 표현
+    display:none;   요소를 랜더링 안함. 랜더링 영역 유지 안함.
+       # visibility:hidden; 요소를 랜더링 안함. 랜더링 영역 유지함.           
+    display:inline-block; 인라인 처럼 한줄에 표시되지만 블럭처럼 width/height 설정이 가능.
+
+
+
+  */ 
+
+/* block태그인 p를 inline 태그로 표시 */
+ p{
+   display: inline;
+ }
+ 
+ div.two{
+  /* DOM 유지되고 랜더링시 영역유지 안됨 */
+   display:none;
+ }
+ div.three{
+  /* DOM 유지되고 랜더링시 영역유지 됨 */
+   visibility: hidden;
+ }
+
+ /* inline 태그인 span 를 block 태그로 표시 */
+ span{
+  display: block;
+ }
+</style>
+</head>
+<body>
+<div  class="one">
+ <p>Hello</p>
+ <p>world</p>
+</div>
+<div class="two">
+ <p>Hello2</p>
+ <p>world2</p>
+</div>
+<div class="three">
+  <p>Hello3</p>
+  <p>world3</p>
+ </div>
+<p>Hello4<span>world4</span></p>
+
+</body>
+</html>
+

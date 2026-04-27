@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 실습</title>
+<link rel="stylesheet" type="text/css" href="css/external.css">
+<style>
+ 
+  /*
+    1. CSS 적용 방법 3가지 
+       1) inline 스타일
+        - style속성이용.
+        - 권장안함. ( 관리 및 디버깅 어려움, 가독성이 떨어짐 )
+      2) internal 스타일
+        - <style> 태그 이용
+      3) external 스타일 
+        - 외부 css파일 이용
+        - 가장 추천
+        ( html과 css가 코드 분리되어 css코드가 많아져서 head태그가 길어질 때 유용,
+          또한 같은 스타일시트를 사용하여 여러 페이지에 적용할 때 브라우저가 캐싱하여 
+	       새로운 페이지마다 다시 다운로드 하지 않음,
+	       만약 head태그에 css가 있다면 html 파일 크기가 늘어나고 브라우저는 새로운
+	       페이지마다 html의 한 부분인 스타일 태그를 매번 받게되어 속도가 느려진다. )
+         
+    2. 우선순위
+    
+     inline 스타일 > Internal 스타일 > external 스타일
+
+  */
+  .internalFox{
+    COLOR: YELLOW;  /* 속성명과 속성값은 대소문자 구별 안함  */
+  }
+</style>
+</head>
+<body>
+<p>Hello</p>
+<!-- inline style 적용 -->
+<p style="color:blue; font-size: 200px;">inline Style</p>
+<!-- internal style 적용:  -->
+<p class="internalFox">internal style</p>
+<!-- external style 적용: 외부 파일로 CSS 정의 -->
+<p id="external">external style</p>
+</body>
+</html>
+

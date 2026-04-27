@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flex 실습</title>
+<style type="text/css">
+
+  /*
+
+    Flex Container 속성
+    2) flex-wrap 속성
+     - 기본적으로 flex item 들은 화면 크기를 줄이면 너비를 모두 랜더링 하지 못하는 경우 크기가 자동으로 축소된다.
+       이런 경우 크기를 줄이지 않고 새로운 줄에 랜더링 되도록 설정하는 방법이다.
+     - 속성값은 다음과 같다.
+        nowrap (기본값)
+	    wrap         : 실습 3번째 항목은 위 기준으로 height가 표시됨.
+	    wrap-reverse : 실습 3번째 항목은 아래 기준으로 height가 표시됨.
+
+     - wrap 되면 height 크기는 최대 height가 아닌
+       단순히 컨텐츠를 표시하는데 필요한 높아만 사용된다.
+     - 화면 크기를 계속 줄이면 결국에는 하나의 열로 표시된다.
+     
+      결론은 display:flex로 지정하면 자동으로 
+           flex-direction: row
+           flex-wrap:nowrap 으로 설정됨.
+
+  */
+
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+
+    /*  Flexbox 적용    */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+</style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="item-1">div</div>
+        <div class="item-2">w=250px</div>
+        <div class="item-3">h=250px</div>
+        <div class="item-4">w/h=300px</div>
+        <div class="item-5">w=350px</div>
+        <div class="item-6">w=350px</div>
+    </div>
+</body>
+</html>
+

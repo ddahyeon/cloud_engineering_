@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Box 모델 실습</title>
+<style type="text/css">
+
+  /*
+   width 와 height
+
+  4) height
+    - height:100% 로 지정하면 전체 페이지만큼 길어질것으로 기대했으나 
+      아주 미미하게만 길어진다.
+      이것은 부모 컨테이너의 가용 높이만큼만 그 길이가 길어지기 때문이다. (*****)
+      따라서 특정요소를 기대한 높이만큼 길어지게 하려면 그 부모요소의 길이를 
+      먼저 길어지게 설정해야 된다.
+     ( section 보다 main, main 보다 body, body보다 
+       html 요소 길이를 먼저 길어지게 설정해야 됨)
+      
+   결론: 페이지에 대한 height를 조정하고자 하는 경우에는 페이지의 높이가
+        전체적으로 반영되도록 사슬구조를 생성해야 된다. (********)
+
+
+  */ 
+
+  
+   #y{
+       /*  부모요소인 id=x 크기를 지정하지 않았기 때문에 height 값 21 크기 사용됨.  */
+      width:100px;
+      height: 100%;
+      background-color: powderblue;
+   }
+
+   #x2{
+     height: 500px;
+   }
+   #y2{
+       /*  부모요소인 id=x2 크기를 500px 로 지정 했기 때문에 height 값 500 크기 사용됨.  */
+      width:100px;
+      height: 100%;
+      background-color: powderblue;
+   }
+</style>
+</head>
+<body>
+   <h1>1. 부모 컨테이터 크기 미설정한 경우</h1>
+    <div id="x">
+      <div id="y">
+        AAA
+      </div>
+    </div>
+   <h1>2. 부모 컨테이터 크기 설정한 경우</h1>
+   <div  id="x2">
+    <div id="y2">
+      AAA
+    </div>
+  </div>
+</body>
+</html>
+

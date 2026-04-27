@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 크기 단위 실습</title>
+<style type="text/css">
+     
+     /*
+
+           ## 기억해야 할 규칙1: 고정된(fixed)배치와 %
+	     
+	     예>
+               .main-header{
+                   width:100%;
+	                position:fixed;
+                   
+	            }
+
+              -> 뷰포트 기준(position:fixed)으로  너비를 100%(width:100%) 설정하겠다는 의미이다.
+	              따라서 화면크기를 변경하면 자동으로 너비도 변경된다.
+
+
+            위 작업은 기본적으로 뷰포트 기준으로 동작되는 vw와 vh 를 사용하면 훨씬 쉽게 적용이 가능함.
+            vw 와 vh 는 백분율(%)값을 의미한다. 즉 단위가 항상 뷰포트를 참조한다는 뜻이다. (**************)
+            예> 80vw 는 80% 의미이다.
+            position 프로퍼티값에 따라서 백분율의 값의 기준이 되는 컨테이닝 블록이 달라졌는데
+            vw와 vh는 position 프로퍼티와 상관없이 항상 실제 뷰포트 기준으로 크기를 설정할 수 있다. 
+
+     */
+      *{
+         margin: 0px;
+      }
+
+      .main-header1{
+         width:50%;
+         height: 80%;
+          /* % 는 position:fixed로 지정해야 뷰포트 기준으로 랜더링됨 */
+	       position:fixed;
+         background-color: yellow;          
+	   }
+      
+
+      .main-header2{
+         /* vw, vh 인 기본적으노 뷰포트 기준이기 때문에 position 지정여부에 영향 없음 */
+         width:50vw;
+         height: 80vh;
+         background-color:red;   
+         position:relative;   /*position 지정여부에 영향 없음 */    
+	   }
+
+     
+</style>
+</head>
+<body>
+  <div id="a">
+    <h1 class="main-header2">Hello1</h1>
+  </div>
+</body>
+</html>
+

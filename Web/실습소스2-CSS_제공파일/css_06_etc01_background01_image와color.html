@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background-position 실습</title>
+<style type="text/css">
+
+    /*
+      1) background-image
+     - 하나 이상의 배경 이미지 설정
+     - 맨 처음 지정한 이미지가 제일 위에 위치함.
+       만약 background-color 와 같이 사용하면 
+       color보다 image가 위에 위치함.
+      예> background-image: url("x.png"),url("x2.png") ;
+     - image가 기본적으로 repeat 됨.
+          #########################################################
+          일반 이미지 스타일링
+
+          - width와 height를 설정했는데 적용이 안되면 인라인레벨 확률이 높다. 따라서 inline-block으로 변경해줘야 된다. (******)
+          - cover, clip,.. 등은 일반 이미지에는 적용할 수 없다.
+          - <img>인 일반 이미지와 background-image는 서로 다르다.
+          ########################################################
+      2) background-color
+        - 하나의 배경색 설정
+      예> background-color: red;
+
+    */ 
+
+    /* 
+       실행결과 확인사항 
+      1. color 위에 image가 랜더링됨.      
+      2. image가 기본적으로 repeat 됨.  
+    */
+    div{
+      background-image:url('images/plans-background.jpg');
+      background-color: red;
+    }
+</style
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+    <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+    <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+    <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pellentesque est velit, laoreet vel rhoncus sit amet.</p>
+      <p>Proin vitae elit est, ut accumsan arcu. Sed consectetur.</p>
+      <p>Donec molestie massa id lorem hendrerit eu bibendum augue vestibulum.</p>
+      <p>Morbi ut lorem in purus facilisis vulputate. Sed purus nibh.</p>
+   </div>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display 실습</title>
+<style type="text/css">
+
+ /*  블럭 레벨이기 때문에 기본적으로 width/height 가 적용됨. */
+.box1{
+	background: lime;
+	width:400px;
+	height:100px
+}
+
+/*  인라인 레벨이기 때문에 기본적으로 width/height 가 적용 안됨. */
+.box2{
+	display:inline; 
+	background: yellow;
+	/* inline 스타일 span는 width와 height 적용안됨 */
+	width:200px;
+	height:200px
+}
+
+/*  인라인 레벨이기 때문에 기본적으로 width/height 가 적용 안됨. */
+.box3{
+	background: aqua;
+	/* inline 스타일 span는 width와 height 적용안됨 */
+	width:400px;
+	height:100px
+}
+
+/*  인라인 레벨이지만 inline-block이기 때문에 width/height 가 적용됨. */
+.box4{	
+	display: inline-block;
+	background: powderblue;
+	width:400px;
+	height:100px
+}
+</style>
+</head>
+<body>
+<div class="box1">BOX1</div>
+<div class="box2">BOX2</div>
+<span class="box3">BOX3</span><br>
+<span class="box4">BOX4</span>
+</body>
+</html>
+
