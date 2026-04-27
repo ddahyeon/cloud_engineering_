@@ -182,9 +182,267 @@ HTML 정리
 
 	 ex. <p id="" data-xxx="" >
 
+   3) html 버전
+     
+      - 표준안인 html5 사용.
+      - 버전설정 방법
+       
+          <!DOCTYPE html> <== 웹브라우저에서 이 정보를 이용해서 처리함.
+	                      따라서 실행중인 웹브라우저에서는 html5 문법이 지원이 되어야 됨.
+			      최신 브라우저는 모든 지원되지만
+			      오래된 웹브라우저에서는 지원이 안될 수도 있음.
+
+
+    4) html5 기본 구조
+
+        <!DOCTYPE html>
+	<html>
+	  <head>
+	    <title></title>
+	    ..
+	  </head>
+	  <body>
+	    ....
+	  </body>
+	</html>
+
+
+	ex.
+
+	        <!DOCTYPE html>
+		<html lang="en">
+		<head>
+		    <title>안녕하세요</title>
+		</head>
+		<body>
+		     <h1>Hello</h1>
+		     <p>단락1</p>
+		     <p>단락2</p>
+		     <a href="google.com">구글</a>
+		</body>
+		</html>
+
+--> 웹브라우저가 html을 다음과 같이 계층적인 구조로 만듦 
+    DOM (Document Object Model)트리라고 부름 
+
+			html 
+		head		body
+		 |		 | 			
+		title	 	h1,         p,      p,    a-href="google.com"
+		 | 		 |
+	     "안녕하세요"		"hello", "단락1", "단락2", "구글" 
+
+용어정리 
+Html, head, title h1, p, a 등: 태그(element)
+href : 속성(attribute)
+"google.com", "안녕하세요" 등 : 값(text)
+
+위의 태그, 속성, 값을 노드(node)라고 부름 
+html은 조상 그 밑의 자식 그 밑의 자손개념 
+
+나중에 CSS,js에서 DOM트리를 접근해서 스타일 및 DOM처리(수정, 추가, 삭제 등)함
 
 
 
+7. Html 태그 주석
+
+<!-- 태그 -->
+
+8. head태그의 자식태그
+
+    1) <title>
+       - html문서의 타이틀 용도
+       - 웹브라우저 탭에 보임
+       - 즐겨찾기 할 때 저장되는 값
+
+    2) <style>
+         - css 설정
+    3) <link>
+         - css 설정
+
+         //////////////////////////////////////////////
+            css 설정 방법 3가지
+	    가. inline 스타일
+	        - 태그의 속성으로 스타일지정
+		  ex. <p style="color:red">hello</p>
+
+	    나. internal 스타일
+		- 같은 html내에서 스타일 지정
+
+		  <head>
+                     <style>
+			 p{
+			  color:red;
+			 }
+		     </style>
+		  </head>
+		 
+		  <p>hello</p>
+		
+	    다. external 스타일
+	       - html 밖 외부파일로 스타일 지정
+
+	          # index.html
+		     <head>
+		       <link href="sytle.css"  rel="stylesheet" >
+                     </head>
+		     <p>hello</p>
+		 
+
+		  # style.css
+                     p{
+			  color:red;
+			}
+
+         ////////////////////////////////////////////////
+
+    4) <script>
+
+         -js 설정
+
+	 ////////////////////////////////////////////////
+	    js 설정
+	    
+	    가. 내부(internal)
+
+		  <script>
+		      js코드
+		  </script>
+
+
+	    나. 외부(external)
+
+		  # index.html
+
+		   <script src="test.js"></script>
+
+		  #  test.js
+		      js코드
+	        
+	 ////////////////////////////////////////////////
+
+
+9. Body 태그의 자식태그 
+  
+  1) 주요개념
+    - html의 모든 태그는 box로 되어있음 (**)
+
+  2) box 배치 방법 (**)
+
+    가. 인라인 레벨( 가로배치 )
+	-ex. <span>, <a>
+	-너비(width)가 자신이 가진 컨텐츠 크기만큼만 확보됨 
+	-명시적으로 너비(width)와 높이(height)를 변경할 수 없음
+	width="100px" height="200px". <-- 적용안됨 
+
+
+    나. 블럭 레벨 ( 세로배치 )
+	-ex. <p>, <div>, <table>, <ul>, <ol>, <tr>, <br>, <hr>
+	-너비(width)가 웹 브라우저의 전체 너비를 차지하기 때문에 이어서 출력되는 태그는 새로운 줄에 랜더링되어 세로배치가 됨 
+	-명시적으로 너비(width)와 높이(height)를 변경할 수 있음
+	width="100px" height="200px" <-- 적용됨 
+
+  3) header 태그
+
+     - <h1> ~  <h6>
+     - 번호가 작을수록 크게 보임
+       <h1>: 32px
+       <H4>: 16px 
+
+     - 기본폰트 크기는 16px (*******, 1rem)
+
+  4) p 태그
+   
+    - 문서의 문단(paragraph) 지정 목적
+
+  5) hr 태그
+    - 선(line)생성
+     - 종료태그가 없음
+     ex. <br>
+
+  6) br 태그
+   
+    - 자바의 \n 동일
+    - 종료태그가 없음
+     ex. <br>
+
+   7) span태그
+     - 값을 그룹핑 목적
+     - 
+       ex. <p>안녕하세요. 홍길동님</p>
+
+           <p>안녕하세요. <span>홍길동</span>님</p>
+
+
+   8) a 태그 ( anchor )
+    
+       - 페이지간의 연결(링크)시 사용됨
+       - 인라인 레벨(가로배치)
+       
+
+       -문법:
+             <a href="타겟">링크</a> <== 현재창에 새로운 페이지가 출력
+	     <a href="타겟" target="_blank">링크</a> <== 새로운 창에 새로운 페이지가 출력
+
+       -종류
+
+         가. 외부링크
+	    
+	     <a href="외부파일|url">링크</a>
+
+	 나. 내부링크
+
+	     <a href="#아이디값">링크</a>
+
+
+	     <a id="값">..</a>
+
+    9) table
+	가. 기본구성
+	<table>: 루트태그
+	<tr>: 행 생성
+	<td> or <th>: 열 생성
+
+
+	나. 그룹핑 가능
+	- 목적: 나중에 js나 css 적용
+	<thead>
+	<tbody>
+	<tfoot>
+
+	다. 셀병합
+	colspan="갯수" <-- 컬럼병합
+	rowspan="갯수" <-- 행병합
+
+    10) list 
+
+	가. 순서없는 리스트 (unordered list)
+	<ul>
+	  <li></li>
+	</ul>
+
+	
+	나. 순서 있는 리스트 (ordered list)
+	<ol>
+	  <li></li>
+	</ol>
+
+------> 블럭레벨
+------> 일반적으로 메뉴만들때 많이 사용됨 (css로 인라인레벨로 변경함)
+
+
+10. Div 와 span 
+
+  - 그룹핑 방법
+ 
+    가. Div
+	- 태그들을 그룹핑 목적 (전통적으로 사용했던 방식)
+	- 블럭 레벨
+
+    나. Span 
+	- 값을 그룹핑 목적
+	- 인라인 레벨
+	ex. <p>안녕하세요. <span>홍길동</span>님</p>
 
 
 
