@@ -1,0 +1,36 @@
+CSS 정리 
+
+1. poistion 
+
+ - poistion 이전 문법으로는 블럭레벨/인라인레밸 정도 배치가 가능함.
+ - poistion + top/right/bottom/left 이용하면 원하는 위치에 배치 가능
+
+2. poistion 종류
+
+ 1)  position:static
+
+   - 기본방법
+   - 블럭레벨은 세로배치,
+     인라인레벨을 가로배치.
+   - top/right/bottom/left 지정해도 적용이 안됨. (***********)
+     역으로 static이 아닌 다른값을 사용해야 top/right/bottom/left 적용된다.
+
+  2) position:relative
+    
+          -top/right/bottom/left 적용됨
+	  -기준은 기본적으로 배치되는 것에 대한 기준임 ( position:static 배치가 기준 )
+
+  3) position:absolute
+   
+         -top/right/bottom/left 적용됨
+	 - 기준은 2
+
+  4) position:fixed
+
+        -top/right/bottom/left 적용됨
+	-기준은 화면(view port)이 기준이됨.
+
+------------------------------------------------------------------
+글꼴(font)
+
+- 글꼴 카테고리 
