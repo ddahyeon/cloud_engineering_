@@ -32,5 +32,24 @@ CSS 정리
 
 ------------------------------------------------------------------
 글꼴(font)
+ 
+ - 글꼴 카테고리 표현: Generic Family
 
-- 글꼴 카테고리 
+    ex.      serif : 꼬리가 있음
+        sans-serif : 꼬리가 없음
+	    ..
+
+- 글꼴 카테고리에 해당되는 실제 글꼴:  font-family
+
+    serif : 타임즈글꼴, Geogia, ...
+    sans-serif : consolas, ....
+
+  
+  글꼴설정방법
+
+    font-family: font-family, font-family, ...., Generic Family
+
+     font-family: 글꼴1, 글꼴2, .....,serif
+     font-family: 글꼴1, 글꼴2, .....,sans-serif
+
+
