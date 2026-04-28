@@ -7,13 +7,13 @@
 
  /* 다음 3가지 경우가 모두 다른 의미이다. */
 
- .select  .aaa {  /* class 가 select 자손인  aaa 인경우 */
+ .select  .aaa {  /* class 가 select 자손인  aaa 인경우 / 공백이면 자손찾기 */
 	color: red;
  }
- .select.aaa {   /* class 가 select이면서 aaa 인경우 */
+ .select.aaa {   /* class 가 select이면서 aaa 인경우 / 다 붙어있으면 and */
 	background-color: yellow
  }
- .select , .aaa { /* class 가 select 또는  aaa 인경우 */
+ .select , .aaa { /* class 가 select 또는  aaa 인경우 / ,로 구분되어있으면 or */
 	font-size: 30px
  }
 </style>
