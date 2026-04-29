@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // JSON 객체
+
+     // 문자열 --> JSON 객체
+     var  str1 = "[10,20]";
+     var  json1 = JSON.parse(str1);
+     console.log(str1, json1, json1[0]);
+     
+
+     // JSON 객체 --> 문자열 
+     var  json2 = {username:"홍길동"}
+     var  str2 = JSON.stringify(json2);
+     console.log(json2, str2, json2.username, json2["username"]);
+     
+    
+  
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // generator 함수
+
+      function* fun(){
+        console.log("1");
+        yield 100
+        console.log("2");
+        yield "홍길동"
+        console.log("3");
+      }
+      var gen = fun();
+      console.log(gen.next()); // {value: 100, done: false}
+      // 중단
+      gen.return();
+      console.log(gen.next()); // {value: undefined, done: true}
+
+
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

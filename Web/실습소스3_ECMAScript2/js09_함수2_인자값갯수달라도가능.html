@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // 함수 생성 방법 2가지
+
+     //1. 함수 선언식 ( 이름있는 함수)
+      function fun(){
+        console.log("fun");
+      }
+      function fun3(n,n2,n3){
+        console.log("fun3",n,n2,n3);
+      }
+     //2. 함수 표현식 ( 익명 함수 *********)
+      var fun2 = function(){
+        console.log("fun2");
+      };
+
+      // 호출
+      fun();
+      fun(10);
+      fun(20,30);
+
+      fun2();
+      fun2("aaa");
+      fun2(10,"aaa");
+
+      fun3();
+      fun3(10);
+      fun3(20,30);
+      fun3(20,30,40);
+      fun3(20,30,40,50);
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

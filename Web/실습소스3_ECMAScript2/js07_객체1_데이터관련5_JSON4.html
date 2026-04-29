@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // JSON 객체
+
+     var xxx = "username";
+     var yyy = "age";
+
+     var person={
+       [xxx]:"홍길동",
+       [yyy]:30,
+       [yyy+"01"]:30,
+     };
+
+     console.log(person);
+     console.log(person.username, person.age, person.age01);
+     console.log(person[xxx], person[yyy]);  // 연관배열 (중요, 많이사용됨)
+
+     //중첩가능
+     var person2={
+        username:"이순신",
+        age:44,
+        email:["inky4832@daum.net","kyin@google.com"],
+        phone:{
+          tel:'02',
+          mobile:'010'
+        }
+     }
+     var personList=[{
+        username:"이순신",
+        age:44,
+        email:["inky4832@daum.net","kyin@google.com"],
+        phone:{
+          tel:'02',
+          mobile:'010'
+        }
+     },{
+        username:"유관순",
+        age:18,
+        email:["ryu@daum.net","ryu@google.com"],
+        phone:{
+          tel:'02',
+          mobile:'010'
+        }
+     }];
+  
+     personList.forEach(function(data,idx){
+       console.log(data.username, data.phone.mobile);
+     });
+    console.log("#############################");
+     //문제:  이름이 '순'으로 끝나는 데이터만 출력?
+     let new_array3 = personList.filter(function(data,idx){
+      return data.username.endsWith("순");  // 조건이 true인 경우에만 반환됨.
+    });
+    console.log(new_array3);
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

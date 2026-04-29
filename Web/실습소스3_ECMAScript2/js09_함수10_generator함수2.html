@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // generator 함수
+
+      function* fun(){
+        console.log("1");
+        yield 100
+        console.log("2");
+        yield "홍길동"
+        console.log("3");
+      }
+      var gen = fun();
+      console.log(gen.next()); // {value:100 , done:false}, false값의미는 yield 사용되었음을 의미.
+      console.log(gen.next()); // {value:"홍길동" , done:false}, false값의미는 yield 사용되었음을 의미.
+      console.log(gen.next()); // {value:undefined , done:true}, true 값의미는 yield 사용되지 않았음을 의미.
+
+
+      function* fun2(n, n2){
+        console.log("1");
+        yield n+n2
+        console.log("2");
+        yield "홍길동"
+        console.log("3");
+      }
+      var gen = fun2(10,20);
+      console.log(gen);
+      console.log(gen.next()); // {value:30 , done:false}, false값의미는 yield 사용되었음을 의미.
+      console.log(gen.next()); // {value:"홍길동" , done:false}, false값의미는 yield 사용되었음을 의미.
+      console.log(gen.next()); // {value:undefined , done:true}, true 값의미는 yield 사용되지 않았음을 의미.
+
+
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // 새로운 창 열기
+  
+     var childWin;
+     function new_win(){
+       childWin = window.open("child.html","","width=200, height=300, left=200, top=200");
+     }
+
+     function self_close(){
+         window.close();
+     }
+
+     function child_close(){
+        childWin.close();
+     }
+
+    </script>
+  </head>
+  <body>
+    <h1>부모창</h1>
+     <button onclick="new_win()">창열기</button>
+     <button onclick="self_close()">자신 창닫기</button>
+     <button onclick="child_close()">자식 창닫기</button>
+  </body>
+</html>

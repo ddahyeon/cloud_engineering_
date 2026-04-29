@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // arrow 함수
+
+      // 1. default 파라미터 사용
+      var fun = function(n, n2=20){return n+n2};
+      var result = fun(10);
+      console.log("1. 일반 fun", result);
+
+      //arrow 변경하시오
+      var fun = (n, n2=20)=>{return n+n2};
+      var fun = (n, n2=20)=>n+n2;
+      var result = fun(10);
+      console.log("1. arrow fun", result);
+
+     // 2. rest 파라미터 사용
+     var fun = function(n, n2=20,...n3){return [n,n2,...n3]};
+      var result = fun(10,20,30,40);
+      console.log("2. 일반 fun", result);
+
+      //arrow 변경하시오
+      var fun = (n, n2=20,...n3)=>{return [n,n2,...n3]};
+      var fun = (n, n2=20,...n3)=>[n,n2,...n3];
+      var result = fun(10,20,30,40);
+      console.log("2. arrow fun", result);
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

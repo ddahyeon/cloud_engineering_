@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // DOM Level 2 - addEventListener
+      window.onload=init;
+
+      function init(){
+        document.querySelector("#x").addEventListener("click", function(){
+         console.log("ok~~~~");
+       });
+      }
+  
+    </script>
+  </head>
+  <body>
+
+   <button id="x">OK</button><br>
+   
+   <script>
+
+       document.querySelector("#x").addEventListener("click", function(){
+         console.log("ok");
+       });
+
+   </script>
+  </body>
+</html>

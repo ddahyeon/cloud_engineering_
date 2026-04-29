@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // generator 함수
+
+      function* fun(){
+        console.log("1");
+        yield
+        console.log("2");
+        console.log("3");
+      }
+      var gen = fun();
+      console.log(gen);  // Generator 객체가 반환됨
+      gen.next();  // 1
+      gen.next();  // 2 3
+
+
+
+      function* fun2(){
+        console.log("1");
+        yield
+        console.log("2");
+        yield
+        console.log("3");
+      }
+      var gen = fun2();
+      console.log(gen);  // Generator 객체가 반환됨
+      gen.next();  // 1
+      gen.next();  // 2 
+      gen.next();  // 3 
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

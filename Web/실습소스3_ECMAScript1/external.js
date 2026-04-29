@@ -1,0 +1,1 @@
+console.log("external 외부파일");

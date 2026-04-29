@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // BOM의 Location 객체 
+
+     console.log(location);
+     console.log(location.host);
+     console.log(location.hostname);
+     console.log(location.href);  // href속성을 이용하면 우리가 원하는 url로 갈수 있다. (******** 중요)
+     console.log(location.pathname);
+     console.log(location.port);
+    
+      
+     function google_go(){
+      location.href="http://www.google.com";
+     }
+     function daum_go(){
+      location.href="http://www.daum.net";
+     }
+
+     function re_rendering(){
+      location.reload();
+     }
+    </script>
+  </head>
+  <body>
+  <button onclick="google_go()">구글</button>
+  <button onclick="daum_go()">다음</button>
+  <button onclick="re_rendering()">새로고침</button>
+
+  </body>
+</html>

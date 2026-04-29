@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+    
+ 
+      window.onload=init; 
+
+      function init(){
+        // var btn = document.getElementById("x");
+
+        // 방법1
+        // var btn = document.querySelector("#x"); 
+        // btn.onclick=function(){
+        //   console.log("ok");
+        // };
+
+        // 방법2 - 함수 중복
+        // document.querySelector("#x").onclick=function(){
+        //   console.log("ok");
+        // };
+
+        // document.querySelector("#x2").onclick=function(){
+        //   console.log("ok");
+        // };
+
+      // 방법3 - 함수 중복 제거
+
+        var fun = function(){
+          console.log("ok");
+        };
+
+        document.querySelector("#x").onclick=fun;  // 콜백함수 (********)
+
+        document.querySelector("#x2").onclick=fun; // 콜백함수 (********)
+    
+      }
+    </script>
+  </head>
+  <body>
+     <button id="x">OK</button><br>
+     <button id="x2">OK2</button><br>
+  </body>
+</html>

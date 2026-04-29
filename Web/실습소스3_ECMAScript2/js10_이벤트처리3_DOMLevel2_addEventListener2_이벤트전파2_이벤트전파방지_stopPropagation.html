@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+
+  </head>
+  <body>
+    <div style="background-color: yellow;" id="a">
+      a
+      <div style="background-color: blue;" id="b">
+        b
+      </div>
+    </div>
+
+   <script>
+
+      document.querySelector("#a").addEventListener("click",function(){
+          console.log("a");
+      }, false);
+
+      document.querySelector("#b").addEventListener("click",function(){
+         console.log("b");
+
+         //이벤트 전파방지
+         event.stopPropagation();
+
+      }, false);
+
+   </script>
+  </body>
+</html>

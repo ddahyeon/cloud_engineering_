@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+      // var 키워드
+      /*
+         - 변수명 중복가능
+         - 함수 스코프를 따름.
+      */
+
+      var n;
+      console.log(n);  // undefined (***********)
+
+      n = 10;
+      console.log(n);  // 10
+      
+      //변수명 중복가능
+      var n = 3.14;
+      console.log(n);  // 10
+      
+      // 함수 스코프
+      if(true){
+        var n2 = 100;
+      }
+      console.log(n2);  //  100
+      
+      function fun(){
+        var n3 =200;
+      }
+      //console.log(n3);   // n3 is not defined
+
+      
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

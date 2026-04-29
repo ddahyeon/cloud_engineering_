@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // 날짜 데이터 생성
+
+     let d = new Date();  
+   
+     console.log("1. 년도:", d.getFullYear());
+     console.log("2. 월:", d.getMonth()+1);   // 0 ~ 11 관리  1월:0
+     console.log("3. 일:", d.getDate());
+     console.log("4. 시간:", d.getHours());
+     console.log("5. 분:", d.getMinutes());
+     console.log("6. 초:", d.getSeconds);
+     console.log("7. 밀리초:", d.getMilliseconds());
+     console.log("8. 요일:", d.getDay()); // 5  일:0 월:1      금:5 토:6
+
+    //원하는 날짜 설정
+    d.setFullYear(2002);
+    d.setMonth(7);
+    d.setDate(15);
+
+    console.log("9. 설정날짜:", d);
+    
+
+
+      
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

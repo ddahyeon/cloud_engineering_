@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // Array 메서드
+
+     var n = [10,20,30];
+    
+     //1. 값 얻기
+
+     console.log("1. 개별적인 인덱스 이용: ", n[0],n[1]);
+
+     console.log("2. 일반for 문: ");
+     for(var i=0; i < n.length; i++ ){
+       console.log(n[i]);
+      }
+      
+      console.log("3. foreac문 역할: ");
+      /*
+      자바
+      for(int x: arr){}
+      
+      JS
+      for(var x of arr){} ==> 값 반환
+      for(var x in arr){} ==> index값 반환
+      */
+     for(var x of n){
+      console.log(x);
+     }
+
+     for(var x in n){
+      console.log(x, n[x]);
+     }
+      
+
+     //2. 값추가/값삽입/값삭제/값변경
+     var n2 = [10,20,30];
+
+     console.log("4. 배열 마지막에 값 추가")
+     //n2[3]=40;
+     n2.push(40);
+     n2.push(50,60,70);
+     console.log(n2);
+     
+     console.log("5. 배열 마지막에 값 삭제");
+     n2.pop();
+     console.log(n2);
+     console.log(n2.pop());  // 삭제된 값이 반환됨.
+     
+     console.log("6. 배열 중간에 값 삽입 및 삭제");
+     /*
+     array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+     
+     array.splice(0,3) ==> 0부터시작해서 3개 삭제
+     array.splice(0,3,10,20) ==> 0부터시작해서 3개 삭제하고 10과 20 삽입
+     array.splice(0,0,10,20) =>  0부터 10과 20 삽입
+     
+     */
+    var n3 = [10,20,30];
+    // n3.splice(0,0,40,50,60); // 0부터 0개삭제하고 40,50,60 삽입
+    // n3.splice(1,2,40,50,60); // 1부터 2개삭제하고 40,50,60 삽입
+    n3.splice(1,2); // 1부터 2개삭제
+    console.log(n3);
+    
+
+    var n4 = [10,20,30,40,50,60];
+    console.log("7. 특정위치값  반환:", n4.indexOf(20));
+    console.log("8. 부분열:", n4.slice(0, 4));
+    console.log("9. 거꾸로:", n4.reverse());
+    
+    var n5 = [10,20,30,40,50,60];
+    console.log("10. 특정값으로 채우기:");
+    // fill(value),fill(value, start),fill(value, start, end)
+    // n5.fill(100);
+    // n5.fill(100, 3);
+    n5.fill(100, 0, 3);
+    console.log(n5);
+
+
+    var n6 = [10,20,30,40,50,60];
+    console.log("11. 배열안의 값으로 배열의 다른 위치에 복사:");
+    //copyWithin(target, start), copyWithin(target, start, end)
+    // let new_array = n6.copyWithin(0, 3); // target 0위치에 3부터시작해서 끝까지의 값을 복사
+    // let new_array = n6.copyWithin(1, 2, 5); // target 1 위치에 2부터시작해서 4까지의 값을 복사
+    let new_array = n6.copyWithin(1,3); // target 1 위치에 2부터시작해서 4까지의 값을 복사
+    // [10,20,30,40,50,60] === > [10,40,50,60,50,60];
+    console.log(new_array); 
+
+
+    console.log("12. 배열의 문자열을 하나의 문자열로 join:");
+    const elements = ['Fire', 'Air', 'Water'];
+    console.log(elements.join());  // "Fire,Air,Water"
+    console.log(elements.join(' '));  // "Fire Air Water"
+    console.log(elements.join('-'));  // "Fire-Air-Water"
+
+
+    var n7 = [4, 2, 5, 1, 3];
+    n7.sort();
+    console.log("13. 오름차순 정렬:", n7);
+
+    var n7 = [14, 22, 65, 1, 34];
+    n7.sort();
+    console.log("13. 오름차순 정렬:", n7);
+
+    // 내림차순 정렬은 함수이용해서 명시적으로 구현해야  됨.
+    var numbers = [4, 2, 5, 1, 3];
+    numbers.sort(function (a, b) {
+      // return a - b;   // 오름차순
+      return b-a;        // 내림차순
+    });
+    console.log(numbers);
+    // sort(함수); <== 가능한 이유가 함수는 데이터이기 때문이다.
+
+
+    // 기본반복(forEach), 가공(map (******)),  필터링(filter)
+    var n8 = [14, 22, 65, 1, 34];
+    console.log("14. 기본 반복처리 ");
+    n8.forEach(function(v,i,arr){
+      console.log(v, i, arr);
+    });
+
+    console.log("15. 가공처리(******************************* 매우 중요) ");
+    let new_array2 = n8.map(function(v,i,arr){
+        console.log(v,i,arr, this,  this.mesg);
+        return v*2;
+    },{mesg:"hello"});
+    console.log(new_array2);
+    
+    console.log("16. 필터링 ");
+    let new_array3 = n8.filter(function(v,i,arr){
+      return v%2==0;  // 조건이 true인 경우에만 반환됨.
+    });
+    console.log(new_array3);
+    
+    // 정적 메서드
+    console.log("17. 배열 생성1: Array.of(값,값2,값3) ");
+    var new_array4 = Array.of(10);
+    var new_array4 = Array.of(10,20,30);
+    console.log(new_array4);
+    
+    console.log("17. 배열 생성2: Array.from(유사배열[, map함수]) ");
+    var new_array5 = Array.from("Hello");
+    console.log(new_array5);  // ['H', 'e', 'l', 'l', 'o']
+    
+    var new_array6 = Array.from("Hello", function(v){
+        return v.toUpperCase();
+    });
+    console.log(new_array6);  // ['H', 'E', 'L', 'L', 'O']
+
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

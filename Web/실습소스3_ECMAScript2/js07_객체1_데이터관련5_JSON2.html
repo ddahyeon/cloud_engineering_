@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // JSON 객체
+    
+     var username = "홍길동";
+     var userage= 20;
+     var person={
+         username,  //username:username 동일. key와 value가 동일하면 key만 지정가능.
+         age:userage,
+
+         setUsername(name){ this.username = name;}, // 함수인 경우 :function 생략 가능
+         setAge(age){this.age=age;},
+         getUsername(){return this.username;},
+         getAge(){return this.age;}
+     };
+     
+     var xxx = "username";
+     var yyy = "age";
+     console.log("이름: ", person.username, person["username"], person[xxx]); // 연관배열을 변수 사용 가능.
+     console.log("나이: ", person.age, person["age"], person[yyy]);
+
+     person.setUsername("이순신");
+     person.setAge(30);
+     console.log("변경값 출력:", person.username, person.age, person.getUsername(), person.getAge());
+
+      
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

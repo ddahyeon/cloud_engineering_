@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+      // let 키워드
+      /*
+         - 변수명 중복 불가능
+         - 블럭 스코프를 따름.
+      */
+
+      let n;
+      console.log(n);  // undefined (***********)
+
+      n = 10;
+      console.log(n);  // 10
+      
+      //변수명 중복 불가능
+      //let n = 3.14;
+      //console.log(n);  // 10
+      
+      // 블럭 스코프: 모든 블럭밖에서 사용 불가
+      if(true){
+        let n2 = 100;
+      }
+      //console.log(n2);  //   n2 is not defined
+      
+      function fun(){
+        let n3 =200;
+      }
+      //console.log(n3);   // n3 is not defined
+
+      
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // generator 함수 활용
+
+      function* fun(s){
+        
+          yield s.substring(0,5);
+          yield s.substring(5,10);
+      }
+      var gen = fun("HelloWorld");
+      console.log(gen.next().value);  // Hello
+      console.log(gen.next().value);  // World
+    
+
+
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

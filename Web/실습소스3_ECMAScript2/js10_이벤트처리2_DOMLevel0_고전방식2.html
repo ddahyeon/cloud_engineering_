@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // DOM Level 0 - 고전방식
+      // <head>태그안에서 DOM을 접근하기 위해서는
+      // onload 이벤트를 사용해서 DOM이 모두 만들어진 후에 접근하도록 설정해야 됨.
+      // onload 없이 접근하면 아직 <body>태그내의 DOM이 안만들어졌기 때문에
+      // 접근할 수 없음.
+ 
+      window.onload=init;  // 중요: init() 아니다.
+      /* 
+           window.onload=init(); // dom이 모두 만들어지면 함수를 호출해야 되는데
+                                    init()으로 쓰면 DOM 생성여부와 
+                                    무관하게 바로 호출이 된다.
+
+           window.onload=init;  // dom이 모두 만들어졌을 때 시스템이 init() 호출함.
+                                   콜백함수 방식.
+      */ 
+      function init(){
+        var btn = document.getElementById("x");
+        console.log(btn); // <button>
+        console.dir(btn); // Button 객체 ( HTMLButtonElement)
+        /*
+            DOM ( Document(html) Object(객체) Model)
+            개념: html의 모든 태그들이 개별적인 객체로 구성되어 있고
+                 이러한 객체들을 이용해서 JS에서 핸들링이 가능한 방법론.
+        */
+
+        var a =  document.getElementById("x2");
+        console.dir(a);  // HTMLAnchorElement
+      }
+    </script>
+  </head>
+  <body>
+   <button id="x">OK</button><br>
+   <a href="" id="x2">daum</a>
+  </body>
+</html>

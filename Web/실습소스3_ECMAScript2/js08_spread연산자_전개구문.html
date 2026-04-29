@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // spread 연산자 (전개 구문)
+    
+     var n = [10,20,30];
+     var x = n;  // 얕은 복사(주소값  복사, x 변경하면 n도 영향 받음)
+
+     //1. 배열 복사 
+     var n2 = [...n];   // 깊은 복사 ( 실제값 복사, n2 변경해도 n은 영향 없음 )
+     console.log(n2);
+    
+
+     //2. 기존 배열에 새로운 값을 추가
+     var n = [10,20,30];
+     var n2 = [...n, 40, 50]
+     var n2 = [40, 50, ...n]
+     console.log(n2);
+    
+     //3. 배열 연결
+     var n = [10,20,30];
+     var n2 = [100,200,300];
+    
+     var n3 = [...n, ...n2];
+     console.log(n3);
+    
+
+     // 4. 문자열 전개
+     var x = [...'hello'];
+     console.log(x);  // ['h', 'e', 'l', 'l', 'o']
+
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

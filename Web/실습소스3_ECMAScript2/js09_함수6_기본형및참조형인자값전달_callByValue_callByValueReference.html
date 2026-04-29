@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // 기본형및참조형인자값전달_callByValue_callByValueReference
+
+      // 기본형 전달==> 전달받은 함수에서 값변경해도 원본에는 영향이 없다.
+      function fun(n){
+         n=20;
+      }
+
+      var x = 10;
+      fun(x);
+      console.log(x);
+      
+      //참조형 전달 ==> 전달받은 함수에서 값변경하면 원본에도 영향이 있다.
+      function fun2(n){
+        n[0]=100;
+      }
+      
+      var x2 =[10,20,30];
+      fun2(x2);
+      console.log(x2);
+
+ 
+
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

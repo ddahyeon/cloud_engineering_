@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // DOM Level 0 - 인라인방식
+      function ok(n){
+        console.log("ok", n);
+      }
+      function ok2(n,n2){
+        console.log("ok2", n, n2);
+      }
+      function ok3(n,n2=10, ...n3){
+        console.log("ok3", n, n2, n3);
+      }
+    </script>
+  </head>
+  <body>
+   <button onclick="ok(100)">OK</button><br>
+
+   <button onclick="ok2(10,20)">OK2</button><br>
+   <button onclick="ok2(10,20,30,40)">OK2-1</button><br>
+
+   <button onclick="ok3(10,20,30,40)">OK3</button><br>
+   
+   
+  </body>
+</html>

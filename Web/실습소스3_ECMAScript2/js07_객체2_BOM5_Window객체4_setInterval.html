@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+     // setTimeout(function(){}, delay);
+     // 단 한번만 실행됨
+  
+     var x;
+     function run(){
+       
+         x = setInterval(function(){
+           console.log("2초뒤에 매번 출력됨");
+         }, 2000);
+     }
+     function stop(){
+        clearInterval(x);
+     }
+    </script>
+  </head>
+  <body>
+    <button onclick="run()">start</button>
+    <button onclick="stop()">stop</button>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+
+  </head>
+  <body>
+    <div style="background-color: yellow;" id="a">
+      a
+      <div style="background-color: blue;" id="b">
+        b
+      </div>
+    </div>
+
+   <script>
+
+      document.querySelector("#a").addEventListener("click",function(){
+          console.log("a");
+      }, true); // false(기본값)로 지정하면 버블링으로 동작되어 b 출력후 a 출력됨 ( 자식에서 부모로 전파) 
+                // true로 지정하면 캡처링으로 동작되어 a 출력후 b 출력됨 (  부모에서 자식로 전파)
+
+      document.querySelector("#b").addEventListener("click",function(){
+         console.log("b");
+      }, false);
+
+   </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+
+      // undefined 비교는 반드시 === (identical)로 비교한다.
+
+      let x = undefined;
+      console.log( x == undefined);  // true
+      console.log( x === undefined);  // true
+
+
+      let x2 = null;
+      console.log( x2 == undefined);  // true, 실제는 null값일지라도 undefined와 == 비교하면 true 반환됨.
+      console.log( x2 === undefined); // false
+
+      
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>
