@@ -61,6 +61,7 @@ ECMAScript6 정리
 
   2) 브라우저 관련 객체 (Browser Object Model: BOM)
     - Window 객체: 웹브라우저 창 관련 객체 (<-- window 이용해서 참조)
+	  	  전역객체 (*****)
 	ex. Window window = new Window();
     - Screen 객체: 웹브라우저 화면 관련 객체  (<-- screen 이용해서 참조)
     - History 객체: 웹브라우저 뒤로/앞으로 관련 객체 (<-- history 이용해서 참조함)
@@ -68,6 +69,10 @@ ECMAScript6 정리
     - Navigator 객체: 웹브라우저 자신 관련 객체 (<-- navigator 이용해서 참조함)
 
   --> 웹브라우저를 open했을때 자동으로 5가지 객체가 생성됨 
+	Screen, history, ;location, navigator는 window객체의 속성으로 제공
+
+  	원래는 window.screen
+		window.history 형식으로 써야되지만, window는 전역객체이기 때문에 생략해서 사용 가능
 
   3) html 문서 관련 객체 (Document Object Model: DOM)
     - Document 객체  (<-- document 이용해서 참조함) 
