@@ -93,6 +93,38 @@ ECMAScript6 정리
 		key:value,
                   key:value
 	          }
-	   getName:function(){ return this.name;}
-	  }
-	 
+	   getName:function(){ return this.name;}, //this 필수
+	   setName:function(n) {this.name=n;} 
+	  };
+
+	 #접근방법은 .(dot) 또는 연관배열 ( ["key"] )
+	 person.name;
+	 person["name"]; <== 변수로 치환 가능 (**********)
+
+	 var xxx = "name";
+	 person[xxx];
+
+	 person.getName();
+	 person.setName("이순신");
+
+
+	# value가 함수인 경우에는 자바의 메서드처럼 축약가능
+
+	  var person = { name:"홍길동",
+	   
+	       //getName:function(){ return this.name;}, // this 필수
+		getName(){ return this.name;}
+	       //setName:function(n){ this.name=n;}
+	        setName(n){this.name=n;}
+	  };
+
+	  ex.  var person = { name, 
+	                      age, 
+			      phone,
+	                      getName(){ return this.name;},
+			      setName(n){this.name=n;}
+			     };
+
+
+
+	                    

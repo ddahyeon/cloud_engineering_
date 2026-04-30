@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+
+    <script>
+ 
+      function get_message(){
+
+        var p = document.querySelector("#x");
+        // console.dir(p); // HTMLParagraphElement
+        // console.log(p.innerHTML);
+        // console.log(p.innerText);
+
+        var div = document.querySelector("#result");
+        div.innerHTML=p.innerHTML;
+      }
+      function set_message(){
+        var p = document.querySelector("#x");
+        // p.innerText="world";
+        p.innerHTML="<h1>world</h1>";
+      }
+    </script>
+  </head>
+  <body>
+    <p id="x">
+      <span>
+        Hello
+      </span>
+    </p>
+    <button onclick="get_message()">값 얻기</button>
+    <button onclick="set_message()">값 수정</button>
+    <div id="result"></div>
+  </body>
+</html>

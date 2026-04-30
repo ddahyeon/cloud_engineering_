@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // 객체분해 할당
+
+      //2. JSON
+
+       //가. 이전 방식
+        var json = {age:20,name:'홍길동'};
+       var name = json.name;  // 연관배열 사용 가능 json["age"]
+       var age = json.age;     // 연관배열 사용 가능 json["name"]
+       console.log(name, age);
+       
+       
+       //나. 객체분해 할당
+       
+       var {name,age} = {age:20,name:'홍길동'};
+       console.log(name, age);
+
+       var {name,email} = {age:20,name:'홍길동'};
+       console.log(name, email); // 
+
+       var {name,email="inky"} = {age:20,name:'홍길동'};
+       console.log(name, email); 
+
+       //변수명 변경
+       var {age:x, name:y} = {age:20, name:'홍길동'};
+       console.log(x, y);
+
+       //일반변수를 객체분해할당시 사용방법은 전체를 ()로 감싸야 된다.
+       var age, name;
+       ({age, name}={age:20, name:'홍길동'});
+       console.log(name, age); 
+       
+
+       
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

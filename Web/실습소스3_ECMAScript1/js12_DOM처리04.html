@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+
+    <script>
+ 
+       function cal(op){
+           var v1 = document.querySelector("#v1").value;  // "10"
+           var v2 = document.querySelector("#v2").value;  // "20"
+
+           var result;
+           switch(op){
+              case "+": result = Number.parseInt(v1) + Number.parseInt(v2); break;
+              case "*": result = Number.parseInt(v1) * Number.parseInt(v2); break;
+           }
+           document.querySelector("#result").innerHTML=result;
+       }
+
+       function cal2(){
+           var v1 = document.querySelector("#v1").value;  // "10"
+           var v2 = document.querySelector("#v2").value;  // "20"
+           // event.targer 는 매우 중요함. 이벤트소스에 대한 정보를 관리할 수 있음.
+           var op = event.target.innerHTML;
+           console.log(op);
+           var result;
+           switch(op){
+              case "-": result = Number.parseInt(v1) - Number.parseInt(v2); break;
+              case "/": result = Number.parseInt(v1) / Number.parseInt(v2); break;
+           }
+           document.querySelector("#result").innerHTML=result;
+       }
+    </script>
+  </head>
+  <body>
+    입력값1:<input type="text" name="v1" id="v1"><br> 
+    입력값2:<input type="text" name="v2" id="v2"><br>
+    <button onclick="cal('+')">+</button> 
+    <button onclick="cal('*')">*</button> <br>
+    <button onclick="cal2()">-</button> 
+    <button onclick="cal2()">/</button> <br>
+
+    결과값:<div id="result"></div>
+  </body>
+</html>

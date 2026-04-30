@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+
+    <script>
+ 
+     
+       function total(){
+
+           var quantity = document.querySelector("#quantity").value;
+           var price = document.querySelector("#price").value;
+           var total = quantity * price;
+
+           document.querySelector("#result").innerHTML=total;
+       }
+
+    </script>
+  </head>
+  <body>
+    
+    수량:
+    <input type="text" name="quantity" id="quantity"><br>
+
+    가격:
+    <select name="price" id="price" onchange="total()">
+      <option value="1000">1000</option>
+      <option value="2000">2000</option>
+      <option value="3000">3000</option>
+    </select><br>
+   
+    
+    총가격:
+    <div id="result"></div>
+  </body>
+</html>

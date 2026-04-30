@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+    <script>
+      
+      // 객체분해 할당
+
+      //1. 배열
+
+       //가. 이전 방식
+        var arr = [10,20];
+        var a = arr[0];
+        var b = arr[1];
+
+
+       //나. 객체분해 할당
+        var [a,b] = [10,20];
+        console.log(a, b);
+
+        var [a,b] = [10,20,30,40];
+        console.log(a, b);
+
+        var [a,b,c,d] = [10,20];
+        console.log(a,b,c,d);
+
+        var [a,b,...c] = [10,20,30,40];
+        console.log(a, b, c);
+
+        var [a,b,c=1,d=2] = [10,20];
+        console.log(a,b,c,d);
+
+        var a,b;
+        [a,b] = [100,200];
+        console.log(a, b);
+
+        //
+        var [,,c] = [10,20,30]; 
+        console.log(c);
+
+        //활용
+        var n = 10;
+        var m2 = 20;
+
+        // 2개의 값을 바꾸시오
+        [m,n]=[n,m];
+        console.log(n,m)
+
+    </script>
+  </head>
+  <body>
+   
+
+  </body>
+</html>

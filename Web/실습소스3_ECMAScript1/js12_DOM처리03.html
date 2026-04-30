@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello</title>
+
+    <script>
+ 
+      function count(){
+
+        //  var input = document.querySelector("#mesg");
+        //  var mesg = input.value;
+
+        var mesg = document.querySelector("#mesg").value;
+        var cnt = mesg.length;
+
+        //  var div = document.querySelector("#result");
+        //  div.innerHTML=cnt;
+  
+        document.querySelector("#result").innerHTML=cnt;
+      }
+   
+
+    </script>
+  </head>
+  <body>
+    
+    입력값:<input type="text" name="mesg" id="mesg" onkeyup="count()" >
+    글자수:<div id="result"></div>
+  </body>
+</html>
