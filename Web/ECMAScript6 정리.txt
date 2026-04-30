@@ -125,6 +125,255 @@ ECMAScript6 정리
 			      setName(n){this.name=n;}
 			     };
 
+	  #key값은 변수로 사용가능
+
+	   var xxx = "name";
+	   var person ={
+			[xxx]:"홍길동", // name:"홍길동"
+			[xxx+01]:"이순신", //name01:"이순신"
+			age;20
+			};
+
+	  #JSON 작성시 함수앞에 set / get 키워드 지정 가능
+	   - 반드시 속성처럼 사용해야 함 (*****)
+	  	
+	   var person = name,
+			age,
+			phone,
+			get username(){return this.name;},
+			set username(n){this.name=n;}
+
+		person.username="홍길동";  // set
+
+		var xxx = person.username;  //get
+
+       # 중요 
+        "{key:value}" ----------> {key:value}
+        "[10,20]"  --------------> [10,20]
+
+          JSON.parse( json(배열)문자열 )
+
+	{key:value} ----------> "{key:value}"
+	 [10,20]  --------------> "[10,20]"
+
+	  JSON.stringify( json(배열) )
+
+7. Spread 연산자
+  문법: [...배열] 
+ 	복사되는 형식으로 동작됨. 즉 새로운 배열을 수정했을 때 원본 배열에 영향이 없음
+
+  용도: 배열복사, 배열연결, 배열추가 
+  Ex. 
+	var arr =[1,2,3];
+	var new_arr = [...arr]; //[1,2,3]; 
+	var new_arr = [10,20,30,...arr];  // [10.20.30.1.2.3]
+		      [...arr,10,20,30];  // [1,2,3,10,20,30]
+
+	  var x = [1,2,3,4];
+	  var x2 = [5,6,7];
+
+	  var x3 = [...x, ...x2]; // [1,2,3,4,5,6,7];
+
+8. 함수(function) 
+  1) 용도: 기능처리
+  2) 문법 2가지 
+    가. 함수 선언식 (함수명이 있는 즉, 이름있는 함수)
+         function 함수명([파라미터,.]){
+		문장;
+	     [return 값;]
+	 }
+
+	호출:  함수명([값,..]);
 
 
-	                    
+     나. 함수 표현식 ( 함수명이 없는 즉, 이름없는 함수. 익명함수)
+
+          var 함수명 =  function ([파라미터,.]){
+		문장;
+	     [return 값;]
+	 };
+
+	 호출:  함수명([값,..]);
+
+	 생성시점: var 함수명 =  function 코드가 실행시 생성됨
+	        반드시 함수정의후에 호출해야 됨.
+
+
+  3) 특징
+     - 호출해야 실행됨.
+     - 호출후 호출한 곳으로 돌아옴.
+     - 호출 시 인자값 전달가능, 돌아올때 리턴값 반환 가능.
+     - 함수의 파라미터 갯수가 일치하지 않아도 가능 (*******************)
+      
+        ex.  function a(n,n2){}
+
+	     a(10,20);
+	     a(10);
+	     a();
+	     a(10,20,30);
+
+   4) 일급객체 ( first class )
+
+	   function my(){}
+	
+	   함수(my) 데이터있음
+
+	   var n = my;  //변수에 저장
+
+	   fun(my);      // 함수 호출시 인자값
+	   ex. setTimeout( 함수, 2000);
+	       setTimeout(function(){}, 2000 );
+
+	   function fun(){
+	     
+	      return my;   // 함수의 리턴값
+	    }
+
+	 //자바의 람다(lambda)
+	  Flyer f = ()-> System.out.println("hello");
+
+     -개념: 함수를 데이터로 처리해서
+           함수를 변수에 저장/함수 호출시 인자값/함수의 리턴값 기능이 가능한 기능을 포함하는 객체 의미.
+
+
+	   // function yyy(){}
+	   var yyy = function(){};
+
+
+	    function xxx(f){
+	        f();
+	    }
+
+
+
+	    xxx(yyy);  // 직접호출한 것은 xxx호출했고 실제 실행은 yyy함수가 반응함.
+	                  방아쇠를 당겼는데  실제 총알이 나감.
+			  콜백함수(callback function)?
+			  실행하고자하는 함수를 직접호출하지 않고 단지 호출하고자하는 함수의
+			  이름만 알려주면 시스템이 적절한 시점에 전달된 함수를 호출하는 동작의 함수.
+	
+
+	  var yyy2 = function(){};	
+
+	  function xxx2(){
+
+		//return function(){};
+		return yyy2;
+	  }
+
+	  var f = xxx2();
+
+	  yyy2();
+	  f();
+
+   5) arrow 함수
+     - 함수표현식의 축약표현
+
+      가. 파라미터없고 리턴없는 함수
+          var f = function(){console.log("fun");};
+
+	  #arrow 함수
+          var f = ()=> {console.log("fun");};
+          var f = ()=> console.log("fun");
+
+      나. 파라미터있고 리턴없는 함수
+          var f = function(n){console.log("fun");};
+          var f = function(n,n2){console.log("fun");};
+	  
+		 
+	
+            #arrow 함수 
+            var f = (n)=>{console.log("fun");};
+            var f = (n)=>console.log("fun");
+            var f = n=>console.log("fun");
+
+	    var f2 = (n,n2)=>console.log("fun");
+
+	   f(10);
+	   f2(10,20);
+
+      다. 파라미터없고 리턴있는 함수
+          var f = function(){ return 100;};
+ 
+         #arrow 함수 
+	 var f = ()=> { return 100;};
+         var f = ()=> 100;
+
+
+      라. 파라미터있고 리턴있는 함수
+          var f = function(n,n2){return n+n2};
+
+	  #arrow 함수 
+	 var f = (n,n2)=> { return n+n2;};
+         var f = (n,n2)=> n+n2;
+
+ 6) generator 함수
+   
+   1)문법
+     
+     function* xxx(){
+	문장1;
+	yield
+	문장2;
+	문장3;
+
+     }
+     var gen = xxx(); 
+     gen.next();
+
+   2)특징
+
+    -  함수 호출시 실행되지 않고 generator객체를 반환하고
+       실행하기 위해서 next() 호출해야 됨.
+    
+    - yield 키워드 이용해서 실행하고자하는 작업을 분리해서 실행가능.
+     
+
+  3) 목적
+    - 작업이 많아서 분리해서 작업할 목적.
+
+
+9. 이벤트 처리
+
+  1) 개념
+
+    - 버튼같은 위젯에 마우스로 클릭 등과 같은 작업시 특정 동작할 수 있도록 처리하는 방법.
+    ex. 버튼클릭시 화면 닫기
+
+
+  2) 용어
+
+    이벤트: 사용자 및 시스템의 동작 의미
+
+    이벤트 소스: 이벤트가 발생된 위젯 의미
+             ex. 버튼
+
+    이벤트 핸들러: 이벤트가 발생될때 처리하는 함수 의미.
+
+    이벤트 타입: 이벤트 종류 의미
+            ex. click, dbclick, keyup, keydown, mouseover,.....
+	ex.
+	    <button>ok</button>
+                  |
+		  | 연결하는 방법: 이벤트처리라고 부름
+		  |
+
+	    function fun(){}
+
+  이벤트 처리 방법 2가지
+
+   가. DOM Level 0
+       
+         - 인라인 방식 : 태그안에서 처리
+	 - 고전 방식 :  태그밖에서 처리
+
+   나. DOL Level 2
+
+
+
+
+
+
+
+
+
