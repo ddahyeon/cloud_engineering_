@@ -365,8 +365,28 @@ ECMAScript6 정리
    가. DOM Level 0
        
          - 인라인 방식 : 태그안에서 처리
-	 - 고전 방식 :  태그밖에서 처리
+		ex.
+		    <button  속성명="fun()">ok</button>
+			 속성명: onclick
+		    <button  onclick="fun()">ok</button>
 
+	 - 고전 방식 :  태그밖에서 처리 ( 태그와 이벤트 분리)
+
+	       <script>
+
+                    function fun(){}
+		    
+		    //이벤트 연결 ( DOM 방식 )
+		    //document.querySelector("css선택자");
+
+		   var btn = document.querySelector("#x");
+		    btn.onclick="fun()";
+
+	       </script>
+
+
+	       <button id="x">ok</button>
+	       <button id="x2">ok2</button>
    나. DOL Level 2
 
 
