@@ -387,7 +387,69 @@ ECMAScript6 정리
 
 	       <button id="x">ok</button>
 	       <button id="x2">ok2</button>
+
    나. DOL Level 2
+
+          function fun(){}
+         var btn = document.querySelector("#x");
+         //btn.onclick=fun;
+	//btn.addEventListener("이벤트타입",콜백함수);
+	btn.addEventListener("click",fun);
+
+
+          <button id="x">ok임/button>
+
+
+10. DOM 처리
+
+ 1)개념
+   JS에서 html tag 접근해서 수정,삭제,조회,추가 등 이러한 작업처리 의미.
+
+
+ 2) 접근방법
+  
+     //var 변수 = document.getElementById("아이디값");
+
+     var 변수 = documnent.querySelector("css선택자");    // 값하나 반환( 태그에 해당하는 객체)
+     var 변수 = documnent.querySelectorAll("css선택자"); // 배열로 반환( 태그에 해당하는 객체)
+
+
+     ex. <button id="x"> <======= documnent.querySelector("#x"), Button 객체반환되고
+                                  이 객체안의 속성/메서드를 찾아서 활용하자.
+        
+	 <p>
+	 <p>       <======= documnent.querySelectorAll("p"), 배열로 반환,
+	 <p>                P태그 객체반환되고  이 객체안의 속성/메서드를 찾아서 활용하자.     
+
+
+
+11. 객체분해할당 ( destructuring )
+
+   1) 개념
+      - 배열 또는 객체(JSON)를 매우 쉽게 요소를 접근하는 방법.
+
+     ex1. 배열
+
+        var arr=[10,20];
+
+        var x1 = arr[0];
+	var x2 = arr[1];
+
+	#객체분해할당
+	var [x1, x2] =[10,20];
+
+
+   ex2. json
+
+       var json = {name:"홍길동", age:20};
+
+       var name = json.name; // json["name"]
+       var age = json.age;   // json["age"]
+
+
+       #객체분해할당
+       var { name, age  } = {name:"홍길동", age:20};
+       var { name:username, age:userage  } = {name:"홍길동", age:20};
 
 
 
